@@ -1,0 +1,37 @@
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Claude Code (KI-Assistent Konfiguration & Gedächtnis)
+.claude/
+
+# Sensible Daten / Passwörter
+.env
+.env.*
+*.env
+secrets.*
+credentials.*
+passwords.*
+config.local.*
+
+# Interne Planungsdokumente (nicht für GitHub)
+claud.md
+prd.md
+"ideal customer profile.md"
+ideal customer profile.md
+
+# Design-Rohdaten
+Website Stitch/
+
+# Verschachtelte Arbeitskopie
+segos-sholto-website/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Node
+node_modules/
