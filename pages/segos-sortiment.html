@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Segos Sortiment — Premium Craft Beer aus Berlin. Helles, Dunkel, IPA und Hopwater. Handwerklich gebraut mit industrieller Präzision.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Segos Sortiment | Segos Braumanufaktur">
+    <meta property="og:description" content="Segos Sortiment — Premium Craft Beer aus Berlin. Helles, Dunkel, IPA und Hopwater.">
+    <meta property="og:url" content="https://www.segos-braumanufaktur.de/pages/segos-sortiment.html">
+    <meta property="og:image" content="https://www.segos-braumanufaktur.de/assets/og-image.jpg">
+    <meta property="og:site_name" content="Segos Braumanufaktur">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Work+Sans:wght@300..600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface": "#1d1c15", "tertiary": "#342431", "background": "#fef9ee",
+                        "surface-container-low": "#f8f3e8", "surface-container": "#f2ede2",
+                        "tertiary-container": "#4b3947", "on-secondary": "#ffffff",
+                        "surface-tint": "#5a614a", "primary": "#242b18",
+                        "on-tertiary-fixed": "#261723", "on-tertiary-fixed-variant": "#54414f",
+                        "on-secondary-fixed-variant": "#46483e", "on-primary-fixed-variant": "#424934",
+                        "on-primary-fixed": "#171e0c", "inverse-primary": "#c2caae",
+                        "on-tertiary": "#ffffff", "on-surface-variant": "#46483f",
+                        "on-primary": "#ffffff", "on-error-container": "#93000a",
+                        "on-background": "#1d1c15", "on-secondary-container": "#626359",
+                        "tertiary-fixed": "#f6dbed", "surface-container-highest": "#e7e2d7",
+                        "surface-container-high": "#ede8dd", "on-error": "#ffffff",
+                        "surface-variant": "#e7e2d7", "surface": "#fef9ee",
+                        "secondary-fixed-dim": "#c7c7bb", "primary-fixed": "#dee6c9",
+                        "primary-container": "#3a412c", "surface-dim": "#dedacf",
+                        "on-tertiary-container": "#bba3b4", "on-primary-container": "#a5ad92",
+                        "inverse-on-surface": "#f5f0e5", "secondary-container": "#e1e0d3",
+                        "inverse-surface": "#323029", "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#d9bfd1", "on-secondary-fixed": "#1b1c15",
+                        "outline-variant": "#c7c7bc", "secondary-fixed": "#e4e3d6",
+                        "error-container": "#ffdad6", "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#fef9ee", "primary-fixed-dim": "#c2caae",
+                        "outline": "#76786f", "secondary": "#5e5f55"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"], "body": ["Work Sans"], "label": ["Work Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                },
+            },
+        };
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        #main-content { display: none; }
+        .dropdown:hover .dropdown-menu { display: block; }
+        ::selection { background-color: #3a412c; color: #fef9ee; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f2ede2; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #3a412c; }
+    </style>
+    <title>Segos Sortiment | Segos Braumanufaktur</title>
+</head>
+<body class="bg-background text-primary font-body antialiased selection:bg-primary-container selection:text-on-primary-container overflow-hidden" id="body-lock">
+
+<!-- Age Gate Overlay -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center bg-primary" id="age-gate">
+    <div class="max-w-md w-full bg-background p-12 text-center relative mx-6">
+        <h2 class="font-headline font-black text-3xl tracking-tighter uppercase mb-2 text-primary">Segos Braumanufaktur</h2>
+        <p class="font-body text-primary/60 uppercase tracking-[0.2em] text-[10px] mb-12">Bist du über 16 Jahre alt?</p>
+        <div class="flex flex-col md:flex-row gap-2 justify-center mb-8">
+            <button onclick="window.AgeGate.confirmAge();" class="flex-1 bg-primary text-white px-6 py-4 font-label font-bold uppercase text-xs tracking-widest hover:bg-primary/90 transition-all active:scale-95">Ja, ich bin bereit</button>
+            <button onclick="window.AgeGate.rejectAge();" class="flex-1 border border-primary/10 text-primary px-6 py-4 font-label font-bold uppercase text-xs tracking-widest hover:bg-surface-container transition-all">Nein</button>
+        </div>
+        <p class="text-[9px] text-primary/40 uppercase tracking-widest leading-relaxed">Genuss mit Verantwortung. Bitte bestätige dein Alter, um fortzufahren.</p>
+    </div>
+</div>
+
+<div id="main-content">
+
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-surface-variant">
+    <div class="flex justify-between items-center w-full px-6 md:px-12 py-5 max-w-none">
+        <a href="/index.html" class="text-2xl font-black text-primary tracking-tighter hover:opacity-75 transition-opacity font-headline uppercase">SEGOS</a>
+        <div class="hidden md:flex items-center gap-10">
+            <a href="/index.html" class="font-headline font-bold uppercase text-sm tracking-tight text-primary/70 hover:text-primary transition-all">Home</a>
+            <div class="dropdown relative">
+                <button class="font-headline font-bold uppercase text-sm tracking-tight text-primary border-b-2 border-primary pb-0.5 flex items-center gap-1">
+                    Marken <span class="material-symbols-outlined text-sm">expand_more</span>
+                </button>
+                <div class="dropdown-menu hidden absolute top-full left-0 mt-2 w-52 bg-background border border-surface-variant shadow-xl z-50">
+                    <a href="/pages/segos-sortiment.html" class="block px-6 py-3 font-headline text-xs uppercase font-bold tracking-tight text-primary/80 hover:bg-surface-container-low border-b border-surface-variant transition-colors">Segos — Premium Handwerk</a>
+                    <a href="/pages/sholto-sortiment.html" class="block px-6 py-3 font-headline text-xs uppercase font-bold tracking-tight text-primary/80 hover:bg-surface-container-low transition-colors">Sholto — Alkoholfrei Modern</a>
+                </div>
+            </div>
+            <a href="/pages/philosophie.html" class="font-headline font-bold uppercase text-sm tracking-tight text-primary/70 hover:text-primary transition-all">Philosophie</a>
+            <a href="/pages/taproom.html" class="font-headline font-bold uppercase text-sm tracking-tight text-primary/70 hover:text-primary transition-all">Taproom</a>
+            <a href="/pages/enjoy-buy.html" class="font-headline font-bold uppercase text-sm tracking-tight text-primary/70 hover:text-primary transition-all">B2B / Gastronomie</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <a href="https://shop.segos-braumanufaktur.de" target="_blank" class="hidden md:inline-block bg-primary text-white px-6 py-2.5 font-label font-bold uppercase text-xs tracking-widest hover:bg-primary/90 transition-all active:scale-95">Zum Shop</a>
+            <button class="md:hidden p-2 text-primary" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" aria-label="Menü öffnen">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-background border-t border-surface-variant">
+        <a href="/index.html" class="block px-6 py-4 text-primary font-headline font-bold uppercase text-sm hover:bg-surface-container-low border-b border-surface-variant/50">Home</a>
+        <a href="/pages/segos-sortiment.html" class="block px-6 py-4 text-primary font-body text-sm hover:bg-surface-container-low border-b border-surface-variant/50">Segos — Premium Handwerk</a>
+        <a href="/pages/sholto-sortiment.html" class="block px-6 py-4 text-primary font-body text-sm hover:bg-surface-container-low border-b border-surface-variant/50">Sholto — Alkoholfrei Modern</a>
+        <a href="/pages/philosophie.html" class="block px-6 py-4 text-primary font-headline font-bold uppercase text-sm hover:bg-surface-container-low border-b border-surface-variant/50">Philosophie</a>
+        <a href="/pages/taproom.html" class="block px-6 py-4 text-primary font-headline font-bold uppercase text-sm hover:bg-surface-container-low border-b border-surface-variant/50">Taproom</a>
+        <a href="/pages/enjoy-buy.html" class="block px-6 py-4 text-primary font-headline font-bold uppercase text-sm hover:bg-surface-container-low border-b border-surface-variant/50">B2B / Gastronomie</a>
+        <a href="https://shop.segos-braumanufaktur.de" target="_blank" class="block px-6 py-4 bg-primary text-white font-label font-bold uppercase text-xs tracking-widest hover:bg-primary/90">Zum Shop</a>
+    </div>
+</nav>
+
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[716px] flex items-center px-8 overflow-hidden bg-surface-container-low">
+<div class="absolute inset-0 z-0 opacity-10">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+</div>
+<div class="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 z-10">
+<div class="lg:col-span-8">
+<span class="inline-block bg-primary text-on-primary px-4 py-1 font-label text-xs uppercase tracking-[0.2em] mb-6">Industrial Alchemist</span>
+<h1 class="text-7xl md:text-9xl font-headline font-black text-primary leading-[0.85] tracking-tighter mb-8">
+                SEGOS<br/>SORTIMENT
+            </h1>
+<p class="max-w-xl text-xl text-on-surface-variant font-body leading-relaxed">
+            Präzision in jedem Milliliter. Unsere Brauerei verbindet modernste Prozesstechnik mit der unbändigen Seele handwerklicher Alchemie. Keine Kompromisse, nur reine Qualität.
+        </p>
+</div>
+<div class="lg:col-span-4 flex flex-col justify-end items-start lg:items-end">
+<div class="w-full lg:w-48 h-1 bg-primary mb-4"></div>
+<p class="font-label text-xs uppercase tracking-widest text-primary font-bold">Hergestellt in Deutschland</p>
+</div>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="py-24 px-8 bg-surface">
+<div class="container mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border-collapse">
+<!-- Helles -->
+<div class="group border border-outline-variant/20 hover:bg-surface-container-low transition-all duration-500">
+<div class="aspect-[3/4] relative overflow-hidden bg-surface-container-high">
+<img alt="Segos Helles" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzrLf08sZ_9C-i5Vm4AqClrtheynHI6RK3YlxC7rLafvcip7C_pqfwCX3y5YdsJk_eqq1M7cVzaxvVtIH1TK9q8UKdxY0IxzxbWdykEWWuNEIMxa0YhvA5nxFQMw-rYItfol_x1cA5dcE73gA0FR_0oFTSHTUK3RTWtsV39u2jr8HV3zYylLnGGLgcBvUMvzo5rW4owR22sM35AJ4WiTSBBtnt1Ij4DQtNFueMFzAJO90FuMXcJwnTQMRfJq6qlYNnOMa0r9UWylVD"/>
+</div>
+<div class="p-8">
+<h3 class="text-3xl font-headline font-black uppercase text-primary mb-2">Helles</h3>
+<p class="text-sm font-label text-on-surface-variant mb-8 uppercase tracking-widest">Das Fundament</p>
+<div class="grid grid-cols-3 gap-2 p-4 bg-surface-container-highest mb-8">
+<div class="text-center">
+<p class="text-xl font-headline font-bold text-primary">4.9%</p>
+<p class="text-[10px] font-label uppercase text-on-surface-variant">ABV</p>
+</div>
+<div class="text-center border-x border-outline-variant/30">
+<p class="text-xl font-headline font-bold text-primary">18</p>
+<p class="text-[10px] font-label uppercase text-on-surface-variant">IBU</p>
+</div>
+<div class="text-center">
+<p class="text-xl font-headline font-bold text-primary">6</p>
+<p class="text-[10px] font-label uppercase text-on-surface-variant">EBC</p>
+</div>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary font-label text-xs uppercase tracking-widest font-bold hover:bg-primary-container transition-colors">Details</button>
+</div>
+</div>
+<!-- Dunkel -->
+<div class="group border border-outline-variant/20 hover:bg-surface-container-low transition-all duration-500">
+<div class="aspect-[3/4] relative overflow-hidden bg-surface-container-high">
+<img alt="Segos Dunkel" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq4IIETnzO_P65zEU1-ubYJOtWtHLXDa8nXB_MaYlPew38MupwwcGw4zOg2FYTrBv6R8qaxBQEXgVBaPjRg2mwrEMQwwWSDDlGnSfK9JvM8WC2xNjebzMAzG_YMDTIIWYmN88fwBsSnj0JwARGWJ0k5CurEk9kjhiar04145D-5Y_GvRcpD7_3Ej02cpLxaHhXYBbYbtUhtXQk8nAcmYlE4vResnCQcAu4VW1s_MBBE3Mb3jz7skYMkIZtSQEjWp-bKf68UuEZNrmR"/>
+</div>
+<div class="p-8">
+<h3 class="text-3xl font-headline font-black uppercase text-primary mb-2">Dunkel</h3>
+<p class="text-sm font-label text-on-surface-variant mb-8 uppercase tracking-widest">Die Röstung</p>
+<div class="grid grid-cols-3 gap-2 p-4 bg-surface-container-highest mb-8">
+<div class="text-center">
+<p class="text-xl font-headline font-bold text-primary">5.2%</p>
+<p class="text-[10px] font-label uppercase text-on-surface-variant">ABV</p>
+</div>
+<div class="text-center border-x border-outline-variant/30">
+<p class="text-xl font-headline font-bold text-primary">24</p>
+<p class="text-[10px] font-label uppercase text-on-surface-variant">IBU</p>
+</div>
+<div class="text-center">
+<p class="text-xl font-headline font-bold text-primary">45</p>
+<p class="text-[10px] font-label uppercase text-on-surface-variant">EBC</p>
+</div>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary font-label text-xs uppercase tracking-widest font-bold hover:bg-primary-container transition-colors">Details</button>
+</div>
+</div>
+<!-- IPA -->
+<div class="group border border-outline-variant/20 hover:bg-surface-container-low transition-all duration-500">
+<div class="aspect-[3/4] relative overflow-hidden bg-surface-container-high">
+<img alt="Segos IPA" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgUmJeleEXwJksYAWKCkuIFoUd8kuRvDFQ4a5xrTSCOnm5iwO1o1pGl4F0idXp9UphEtwiwxrl_o6NTjH8HJUCov3Kphzzs0RUpIqTWoiYCEvaGmI6wxk540pmR1_FioOp8DucfJEVhSZiqif_O_2oLWDN3zY6gstDXsEj_8-N3fXlJ1nPkAJYmlXlpwGwvrWwzD1Dr2UUQaOnrQIBo9wQHSI0531Js_sHveI8ijc3z3JP-tuJwauP-TXQvm68S3RQILxmD7um2rb3"/>
+</div>
+<div class="p-8">
+<h3 class="text-3xl font-headline font-black uppercase text-primary mb-2">IPA</h3>
+<p class="text-sm font-label text-on-surface-variant mb-8 uppercase tracking-widest">Das Experiment</p>
+<div class="grid grid-cols-3 gap-2 p-4 bg-surface-container-highest mb-8">
+<div class="text-center">
+<p class="text-xl font-headline font-bold text-primary">6.5%</p>
+<p class="text-[10px] font-label uppercase text-on-surface-variant">ABV</p>
+</div>
+<div class="text-center border-x border-outline-variant/30">
+<p class="text-xl font-headline font-bold text-primary">55</p>
+<p class="text-[10px] font-label uppercase text-on-surface-variant">IBU</p>
+</div>
+<div class="text-center">
+<p class="text-xl font-headline font-bold text-primary">12</p>
+<p class="text-[10px] font-label uppercase text-on-surface-variant">EBC</p>
+</div>
+</div>
+<a class="block w-full py-4 bg-primary text-on-primary font-label text-xs uppercase tracking-widest font-bold hover:bg-primary-container transition-colors text-center" href="/pages/produkt-segos-ipa.html">Details</a>
+</div>
+</div>
+<!-- Hopwater -->
+<div class="group border border-outline-variant/20 hover:bg-surface-container-low transition-all duration-500">
+<div class="aspect-[3/4] relative overflow-hidden bg-surface-container-high">
+<img alt="Segos Hopwater" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAucdfJYEZe8ACgNgwVnygDvLzpeo01gTrdyGRkTcZ7Cy6RhT0LVrEvQUKpq2KCw4LMrDXZV9OzwfIW9BKGTEpAa7weHZzoMr8MX3m7DTCdlyHcaRQUBcY3QYilwPjjsPJqvT-H1sJi9018rqRQtPx8UR81Ps3Qm5XH9whJnFPUNmSnaDyVtM3w46-h-BCPbw1Y-00f_-ywsSJuKtUq25SSWSvKK0NgMQjeSHbiF7b3WP3RsaRtccG1uiFURl0GkBAlbV6fBOEkJPeZ"/>
+</div>
+<div class="p-8">
+<h3 class="text-3xl font-headline font-black uppercase text-primary mb-2">Hopwater</h3>
+<p class="text-sm font-label text-on-surface-variant mb-8 uppercase tracking-widest">Die Essenz</p>
+<div class="grid grid-cols-3 gap-2 p-4 bg-surface-container-highest mb-8">
+<div class="text-center">
+<p class="text-xl font-headline font-bold text-primary">0.0%</p>
+<p class="text-[10px] font-label uppercase text-on-surface-variant">ABV</p>
+</div>
+<div class="text-center border-x border-outline-variant/30">
+<p class="text-xl font-headline font-bold text-primary">12</p>
+<p class="text-[10px] font-label uppercase text-on-surface-variant">IBU</p>
+</div>
+<div class="text-center">
+<p class="text-xl font-headline font-bold text-primary">2</p>
+<p class="text-[10px] font-label uppercase text-on-surface-variant">EBC</p>
+</div>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary font-label text-xs uppercase tracking-widest font-bold hover:bg-primary-container transition-colors">Details</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Editorial Section -->
+<section class="py-32 px-8 bg-primary text-on-primary overflow-hidden">
+<div class="container mx-auto">
+<div class="flex flex-col lg:flex-row gap-16 items-center">
+<div class="lg:w-1/2">
+<h2 class="text-5xl md:text-7xl font-headline font-black uppercase tracking-tighter mb-8 leading-none">
+                Vom Labor<br/>ins Glas.
+            </h2>
+<div class="space-y-6 font-body text-on-primary/70 text-lg max-w-lg">
+<p>Unsere Brauerei ist kein Stall. Es ist eine Produktionsstätte für Perfektion. Wir nutzen chromatographische Analysen, um das optimale Hopfenprofil für jede Charge sicherzustellen.</p>
+<p>Handwerk bedeutet für uns nicht, Dinge "wie früher" zu tun. Es bedeutet, die besten Werkzeuge der Gegenwart zu nutzen, um die Seele des Produkts freizulegen.</p>
+</div>
+</div>
+<div class="lg:w-1/2 relative">
+<div class="absolute -top-12 -left-12 w-48 h-48 border-t-8 border-l-8 border-on-primary/20"></div>
+<div class="bg-surface-container-low p-4">
+<img alt="Brewery Lab" class="w-full aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBe_CkG-Xp-P6PV3XETx84fSntPPmMpHZDPCLxDSyJ80jmmPZbI_dz5sYY50ZFT7Qy2UOjiqFfE64wyTssxTMp8aev1TdKfq8W5lkmbcAByOxPtZTQ_Zn_X2DkcWIPsx8uaDcQkN1Ns82P8u_ldLB7B7e_C7JQc9GqQxBExF3HdifqhCgITjz3o0VHvwCf2gKxugRIgxdd8VpGN9badJ_Lcck6Y-d_d28sKaBIaWLhE9QSxKawPWwm8To95FOmJz6PuVKsy1EpuyA7o"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+</div><!-- /main-content -->
+
+<footer class="bg-primary text-background mt-0 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="grid md:grid-cols-4 gap-12 mb-12">
+            <div>
+                <h3 class="font-headline font-black text-xl tracking-tighter uppercase mb-4">Segos</h3>
+                <p class="font-body text-background/70 text-sm leading-relaxed">Premium-Braumanufaktur aus Berlin. Handwerklich, authentisch, datenbasiert.</p>
+            </div>
+            <div>
+                <h4 class="font-headline font-bold text-sm uppercase tracking-widest mb-4">Navigation</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="/index.html" class="text-background/70 hover:text-background transition-colors">Home</a></li>
+                    <li><a href="/pages/philosophie.html" class="text-background/70 hover:text-background transition-colors">Über Uns</a></li>
+                    <li><a href="/pages/taproom.html" class="text-background/70 hover:text-background transition-colors">Taproom</a></li>
+                    <li><a href="/pages/enjoy-buy.html" class="text-background/70 hover:text-background transition-colors">B2B / Gastronomie</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-headline font-bold text-sm uppercase tracking-widest mb-4">Kontakt</h4>
+                <ul class="space-y-3 text-sm">
+                    <li class="text-background/70">Gewerbestraße 42<br>10317 Berlin-Lichtenberg</li>
+                    <li><a href="tel:+4930XXXXXXXX" class="text-background/70 hover:text-background transition-colors">+49 30 XXXX-XXXX</a></li>
+                    <li><a href="mailto:info@segos-braumanufaktur.de" class="text-background/70 hover:text-background transition-colors">info@segos-braumanufaktur.de</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-headline font-bold text-sm uppercase tracking-widest mb-4">Follow Us</h4>
+                <div class="flex gap-4 mb-8">
+                    <a href="https://instagram.com/segos.braumanufaktur" target="_blank" rel="noopener" class="text-background/70 hover:text-background transition-colors font-label text-xs uppercase tracking-widest">Instagram</a>
+                    <a href="https://facebook.com/segos.braumanufaktur" target="_blank" rel="noopener" class="text-background/70 hover:text-background transition-colors font-label text-xs uppercase tracking-widest">Facebook</a>
+                </div>
+                <h4 class="font-headline font-bold text-sm uppercase tracking-widest mb-4">Legal</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="/pages/impressum.html" class="text-background/70 hover:text-background transition-colors">Impressum</a></li>
+                    <li><a href="/pages/datenschutz.html" class="text-background/70 hover:text-background transition-colors">Datenschutz</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-background/20 pt-8 mb-8">
+            <h4 class="font-headline font-bold text-sm uppercase tracking-widest mb-4">Newsletter</h4>
+            <form class="flex flex-col md:flex-row gap-2" onsubmit="return false;">
+                <input type="email" placeholder="Deine E-Mail-Adresse" required class="flex-1 px-4 py-3 bg-background/10 border border-background/20 text-background placeholder:text-background/50 focus:outline-none focus:border-background/50">
+                <button type="submit" class="bg-background text-primary px-6 py-3 font-label font-bold uppercase text-xs tracking-widest hover:bg-background/90 transition-all">Abonnieren</button>
+            </form>
+        </div>
+        <div class="border-t border-background/20 pt-8 text-center text-sm text-background/50">
+            <p>&copy; 2026 Segos Braumanufaktur. Alle Rechte vorbehalten.</p>
+        </div>
+    </div>
+</footer>
+
+<script type="module">
+    import CONFIG from '/assets/js/config.js';
+    import { AgeGate } from '/assets/js/utils.js';
+    window.AgeGate = AgeGate;
+    window.CONFIG = CONFIG;
+</script>
+</body>
+</html>
