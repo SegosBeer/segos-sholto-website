@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sholto Tutti — Fruchtig, Hopfig, Bierig. 0.0% ABV, 35 IBU, alkoholfrei mit vollem Biercharakter. Handcrafted Alchemy aus Berlin.">
+    <meta name="description" content="Sholto Garden — New Standard. Alkoholfrei. Botanisches Lager mit frischen Kräutern und leichtem Lifestyle-Charakter. Inspiriert von urbanen Dachgärten.">
     <meta name="robots" content="index, follow">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Sholto Tutti | Segos Braumanufaktur">
-    <meta property="og:description" content="Sholto Tutti — Fruchtig, Hopfig, Bierig. 0.0% ABV, 35 IBU, alkoholfrei mit vollem Biercharakter.">
-    <meta property="og:url" content="https://www.segos.beer/pages/produkt-sholto-tutti.html">
+    <meta property="og:title" content="Sholto Garden | Segos Braumanufaktur">
+    <meta property="og:description" content="Sholto Garden — New Standard. Alkoholfrei. Botanisches Lager mit frischen Kräutern aus Vorarlberg.">
+    <meta property="og:url" content="https://www.segos.beer/pages/produkt-sholto-garden.html">
     <meta property="og:image" content="https://www.segos.beer/assets/og-image.jpg">
     <meta property="og:site_name" content="Segos Braumanufaktur">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Work+Sans:wght@300..600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -61,9 +61,12 @@
         #main-content { display: none; }
         .dropdown:hover .dropdown-menu { display: block; }
         ::selection { background-color: #3a412c; color: #fef9ee; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f2ede2; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #3a412c; }
         .editorial-grid { display: grid; grid-template-columns: repeat(12, 1fr); }
     </style>
-    <title>Sholto Tutti | Segos Braumanufaktur</title>
+    <title>Sholto Garden | Segos Braumanufaktur</title>
 </head>
 <body class="bg-background text-primary font-body antialiased selection:bg-primary-container selection:text-on-primary-container" id="body-lock">
 
@@ -84,20 +87,22 @@
 
 <nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-surface-variant">
     <div class="flex justify-between items-center w-full px-6 md:px-12 py-5 max-w-none">
-        <a href="/index.html" class="text-2xl font-black text-primary tracking-tighter hover:opacity-75 transition-opacity font-headline uppercase">SEGOS</a>
+        <a href="../index.html" class="text-2xl font-black text-primary tracking-tighter hover:opacity-75 transition-opacity font-headline uppercase">SEGOS</a>
         <div class="hidden md:flex items-center gap-10">
-            <a href="/index.html" class="font-headline font-bold uppercase text-sm tracking-tight text-primary/70 hover:text-primary transition-all">Home</a>
+            <a href="../index.html" class="font-headline font-bold uppercase text-sm tracking-tight text-primary/70 hover:text-primary transition-all">Home</a>
             <div class="dropdown relative flex items-center gap-1">
-                <a href="/pages/unsere-marken.html" class="font-headline font-bold uppercase text-sm tracking-tight text-primary border-b-2 border-primary pb-0.5">Marken</a>
-                <span class="material-symbols-outlined text-sm text-primary">expand_more</span>
+                <a href="./unsere-marken.html" class="font-headline font-bold uppercase text-sm tracking-tight text-primary border-b-2 border-primary pb-0.5">Marken</a>
+                <button onclick="var m=this.nextElementSibling;m.classList.toggle('hidden');" class="text-primary flex items-center">
+                    <span class="material-symbols-outlined text-sm">expand_more</span>
+                </button>
                 <div class="dropdown-menu hidden absolute top-full left-0 mt-2 w-52 bg-background border border-surface-variant shadow-xl z-50">
-                    <a href="/pages/segos-sortiment.html" class="block px-6 py-3 font-headline text-xs uppercase font-bold tracking-tight text-primary/80 hover:bg-surface-container-low border-b border-surface-variant transition-colors">Segos — Premium Handwerk</a>
-                    <a href="/pages/sholto-sortiment.html" class="block px-6 py-3 font-headline text-xs uppercase font-bold tracking-tight text-primary/80 hover:bg-surface-container-low transition-colors">Sholto — Alkoholfrei Modern</a>
+                    <a href="./segos-sortiment.html" class="block px-6 py-3 font-headline text-xs uppercase font-bold tracking-tight text-primary/80 hover:bg-surface-container-low border-b border-surface-variant transition-colors">Segos — Premium Handwerk</a>
+                    <a href="./sholto-sortiment.html" class="block px-6 py-3 font-headline text-xs uppercase font-bold tracking-tight text-primary/80 hover:bg-surface-container-low transition-colors">Sholto — Alkoholfrei Modern</a>
                 </div>
             </div>
-            <a href="/pages/philosophie.html" class="font-headline font-bold uppercase text-sm tracking-tight text-primary/70 hover:text-primary transition-all">Philosophie</a>
-            <a href="/pages/taproom.html" class="font-headline font-bold uppercase text-sm tracking-tight text-primary/70 hover:text-primary transition-all">Taproom</a>
-            <a href="/pages/enjoy-buy.html" class="font-headline font-bold uppercase text-sm tracking-tight text-primary/70 hover:text-primary transition-all">Enjoy &amp; Buy local</a>
+            <a href="./philosophie.html" class="font-headline font-bold uppercase text-sm tracking-tight text-primary/70 hover:text-primary transition-all">Brauerei</a>
+            <a href="./taproom.html" class="font-headline font-bold uppercase text-sm tracking-tight text-primary/70 hover:text-primary transition-all">Taproom</a>
+            <a href="./enjoy-buy.html" class="font-headline font-bold uppercase text-sm tracking-tight text-primary/70 hover:text-primary transition-all">Enjoy &amp; Buy local</a>
         </div>
         <div class="flex items-center gap-4">
             <a href="https://segos-sholto-shop.myshopify.com" target="_blank" class="hidden md:inline-block bg-primary text-white px-6 py-2.5 font-label font-bold uppercase text-xs tracking-widest hover:bg-primary/90 transition-all active:scale-95">Zum Shop</a>
@@ -107,46 +112,53 @@
         </div>
     </div>
     <div id="mobile-menu" class="hidden md:hidden bg-background border-t border-surface-variant">
-        <a href="/index.html" class="block px-6 py-4 text-primary font-headline font-bold uppercase text-sm hover:bg-surface-container-low border-b border-surface-variant/50">Home</a>
-        <a href="/pages/unsere-marken.html" class="block px-6 py-4 text-primary font-headline font-bold uppercase text-sm hover:bg-surface-container-low border-b border-surface-variant/50">Marken</a>
-        <a href="/pages/segos-sortiment.html" class="block px-6 py-4 text-primary font-body text-sm hover:bg-surface-container-low border-b border-surface-variant/50">Segos — Premium Handwerk</a>
-        <a href="/pages/sholto-sortiment.html" class="block px-6 py-4 text-primary font-body text-sm hover:bg-surface-container-low border-b border-surface-variant/50">Sholto — Alkoholfrei Modern</a>
-        <a href="/pages/philosophie.html" class="block px-6 py-4 text-primary font-headline font-bold uppercase text-sm hover:bg-surface-container-low border-b border-surface-variant/50">Philosophie</a>
-        <a href="/pages/taproom.html" class="block px-6 py-4 text-primary font-headline font-bold uppercase text-sm hover:bg-surface-container-low border-b border-surface-variant/50">Taproom</a>
-        <a href="/pages/enjoy-buy.html" class="block px-6 py-4 text-primary font-headline font-bold uppercase text-sm hover:bg-surface-container-low border-b border-surface-variant/50">Enjoy &amp; Buy local</a>
+        <a href="../index.html" class="block px-6 py-4 text-primary font-headline font-bold uppercase text-sm hover:bg-surface-container-low border-b border-surface-variant/50">Home</a>
+        <a href="./unsere-marken.html" class="block px-6 py-4 text-primary font-headline font-bold uppercase text-sm hover:bg-surface-container-low border-b border-surface-variant/50">Marken</a>
+        <a href="./segos-sortiment.html" class="block px-6 py-4 text-primary font-body text-sm hover:bg-surface-container-low border-b border-surface-variant/50">Segos — Premium Handwerk</a>
+        <a href="./sholto-sortiment.html" class="block px-6 py-4 text-primary font-body text-sm hover:bg-surface-container-low border-b border-surface-variant/50">Sholto — Alkoholfrei Modern</a>
+        <a href="./philosophie.html" class="block px-6 py-4 text-primary font-headline font-bold uppercase text-sm hover:bg-surface-container-low border-b border-surface-variant/50">Brauerei</a>
+        <a href="./taproom.html" class="block px-6 py-4 text-primary font-headline font-bold uppercase text-sm hover:bg-surface-container-low border-b border-surface-variant/50">Taproom</a>
+        <a href="./enjoy-buy.html" class="block px-6 py-4 text-primary font-headline font-bold uppercase text-sm hover:bg-surface-container-low border-b border-surface-variant/50">Enjoy &amp; Buy local</a>
         <a href="https://segos-sholto-shop.myshopify.com" target="_blank" class="block px-6 py-4 bg-primary text-white font-label font-bold uppercase text-xs tracking-widest hover:bg-primary/90">Zum Shop</a>
     </div>
 </nav>
 
 <main class="pt-24">
 
-<!-- Hero Section -->
+<!-- ============================================================ -->
+<!-- HERO SECTION (Sholto-Style) -->
+<!-- Bild: ../assets/images/produkt-sholto-garden/produkt-haupt.png -->
+<!-- ============================================================ -->
 <section class="min-h-screen flex flex-col md:flex-row items-center px-10 gap-16 mb-20">
     <div class="w-full md:w-1/2 flex flex-col justify-center">
-        <span class="font-label text-xs uppercase tracking-[0.4em] mb-4 text-primary opacity-60">Handcrafted Alchemy</span>
+        <span class="font-label text-xs uppercase tracking-[0.4em] mb-4 text-primary opacity-60">Sholto New Standard</span>
+        <!-- PRODUKTNAME / GROSSER SLOGAN (hier bearbeiten) -->
         <h1 class="font-headline text-7xl md:text-[9rem] font-bold leading-[0.85] tracking-tighter text-primary mb-10">
-            FRUCHTIG,<br/>HOPFIG,<br/>BIERIG.
+            BOTANISCH,<br/>FRISCH,<br/>LEICHT.
         </h1>
-        <!-- Brew-Spec Grid -->
+        <!-- TECHNISCHE KENNZAHLEN (hier bearbeiten) -->
         <div class="bg-surface-container-highest p-10 flex gap-12 max-w-xl">
             <div>
+                <!-- ABV-WERT (hier bearbeiten) -->
                 <div class="font-headline text-4xl font-bold text-primary">0.0%</div>
                 <div class="font-label text-xs uppercase tracking-widest text-primary-container">ALC VOL</div>
             </div>
             <div>
-                <div class="font-headline text-4xl font-bold text-primary">35</div>
+                <!-- IBU-WERT (hier bearbeiten) -->
+                <div class="font-headline text-4xl font-bold text-primary">15</div>
                 <div class="font-label text-xs uppercase tracking-widest text-primary-container">IBU</div>
             </div>
             <div>
-                <div class="font-headline text-4xl font-bold text-primary">12°</div>
-                <div class="font-label text-xs uppercase tracking-widest text-primary-container">PLATO</div>
+                <!-- KALORIEN (hier bearbeiten) -->
+                <div class="font-headline text-4xl font-bold text-primary">Low</div>
+                <div class="font-label text-xs uppercase tracking-widest text-primary-container">CAL</div>
             </div>
         </div>
         <div class="pt-8 flex flex-wrap gap-4">
             <a href="https://segos-sholto-shop.myshopify.com" target="_blank" class="inline-block bg-primary text-white font-label font-bold uppercase tracking-widest px-12 py-5 text-sm hover:bg-primary-container transition-all hover:-translate-y-1">
                 Jetzt Einkaufen
             </a>
-            <a href="/pages/enjoy-buy.html#store-finder" class="inline-flex items-center gap-2 border-2 border-primary text-primary font-label font-bold uppercase tracking-widest px-8 py-5 text-sm hover:bg-primary hover:text-white transition-all">
+            <a href="./enjoy-buy.html#store-finder" class="inline-flex items-center gap-2 border-2 border-primary text-primary font-label font-bold uppercase tracking-widest px-8 py-5 text-sm hover:bg-primary hover:text-white transition-all">
                 <span class="material-symbols-outlined" style="font-size:18px">location_on</span>
                 Lokal kaufen
             </a>
@@ -154,92 +166,90 @@
     </div>
     <div class="w-full md:w-1/2 relative">
         <div class="absolute -right-20 -top-20 w-96 h-96 bg-primary-container opacity-5 blur-[120px] rounded-full"></div>
-        <img alt="Sholto Tutti non-alcoholic beer can" class="w-full h-[819px] object-contain transform hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5DYmcHR1fU_hy7-TbfXt5seQBWCUcGKrMfP-gdVsW3xNjNLxG18ss2TRZ0dDYEPe-5EmUnoOoUm7YQh_FVs28n422lK6jnI7MV4h7GiMaL0nARhHhMPpsXlnfiiQimJfeIWSBduEOCeFtoyZqA311AWfdLbmosmQ4VPwC1h8rIfP86T7XuIRcMd3Vxn51RVln8NnKic4X6Vp0_3IzCLbbfEGwMvx-sDip7O7YoPcylHTDhMRnX1ioKJEmzpVXWnSg4dxXJM7BP_7K"/>
+        <!-- HAUPTPRODUKTBILD (hier ersetzen) -->
+        <img alt="Sholto Garden Dose" class="w-full h-[819px] object-contain transform hover:scale-105 transition-transform duration-700" src="../assets/images/produkt-sholto-garden/produkt-haupt.png"/>
     </div>
 </section>
 
-<!-- Section 2: Geruch (Aroma) -->
+<!-- ============================================================ -->
+<!-- GERUCH (Aroma-Sektion) -->
+<!-- Bild: ../assets/images/produkt-sholto-garden/detail-1.jpg -->
+<!-- ============================================================ -->
 <section class="editorial-grid bg-surface-container-low min-h-[614px] items-stretch">
     <div class="col-span-12 md:col-span-7 relative min-h-[400px]">
-        <img alt="Abstract stripes pattern" class="w-full h-full object-cover grayscale brightness-75 mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqUiq_MnGK05JeEWWPkAIL8SnlnNGV00kp1fQ1XQDznx3CkrjRCBRxVOC6mCU8qA3PtuGsWdk0gCoWWs-0FQ_zrrbIzwDeJbjUE6LBwCMEkKL-KC54K9RTtNRwrJogA-v65VToAaPQ6T2G80JGh_gYj9Y_zCI2B7vCXBe-pCi2Hu1ELIqP6OWLpsjbK7iCLldDVXCQrS5gcNqzyoAtqTc5KNkhsMC6gGTl9vVMhWxeHlhby0Toag5cMQJ-9l0wJVOmP9eC48ngu0tx"/>
+        <!-- DETAIL-BILD 1 (hier ersetzen) -->
+        <img alt="Sholto Garden Aroma" class="w-full h-full object-cover grayscale brightness-75 mix-blend-multiply" src="../assets/images/produkt-sholto-garden/detail-1.jpg"/>
         <div class="absolute inset-0 bg-primary opacity-10"></div>
     </div>
     <div class="col-span-12 md:col-span-5 flex flex-col justify-center p-16 md:p-24 bg-surface">
         <h2 class="font-headline text-xs uppercase tracking-[0.5em] text-primary-container mb-8">Geruch</h2>
-        <h3 class="font-headline text-5xl font-bold leading-tight mb-8">VOLLE FRUCHT VORAUS.</h3>
+        <!-- GERUCH-TITEL (hier bearbeiten) -->
+        <h3 class="font-headline text-5xl font-bold leading-tight mb-8">KRÄUTER VOM DACHGARTEN.</h3>
+        <!-- GERUCH-BESCHREIBUNG (hier bearbeiten) -->
         <p class="font-body text-xl leading-relaxed text-secondary opacity-90 max-w-md">
-            Schon beim ersten Öffnen entfaltet sich ein Bouquet aus frischen Mandarinen und intensiven Orangenzesten. Eine olfaktorische Reise in den sommerlichen Obstgarten, perfekt ausbalanciert durch herbe Kräuternoten.
+            Inspiriert von urbanen Dachgärten. Frischer Basilikum, Minze und Zitronenverbene begegnen dem Hopfen auf Augenhöhe. Ein Duft, der Klarheit verspricht.
         </p>
     </div>
 </section>
 
-<!-- Section 3: Geschmack (Taste) -->
+<!-- ============================================================ -->
+<!-- GESCHMACK (Taste-Sektion) -->
+<!-- Bild: ../assets/images/produkt-sholto-garden/detail-2.jpg -->
+<!-- ============================================================ -->
 <section class="editorial-grid min-h-[614px] items-stretch">
     <div class="col-span-12 md:col-span-5 order-2 md:order-1 flex flex-col justify-center p-16 md:p-24 bg-primary text-background">
         <h2 class="font-headline text-xs uppercase tracking-[0.5em] text-primary-fixed mb-8 opacity-60">Geschmack</h2>
-        <h3 class="font-headline text-5xl font-bold leading-tight mb-8">HOPFEN-MALZ-TANZ.</h3>
+        <!-- GESCHMACK-TITEL (hier bearbeiten) -->
+        <h3 class="font-headline text-5xl font-bold leading-tight mb-8">LEICHT UND BELEBEND.</h3>
+        <!-- GESCHMACK-BESCHREIBUNG (hier bearbeiten) -->
         <p class="font-body text-xl leading-relaxed text-surface-container-low max-w-md">
-            Ein komplexes Wechselspiel: Die fruchtige Süße trifft auf eine markante, aber weiche Bittere. Zitrusakkorde vermischen sich mit wilden Beeren, getragen von einem vollmundigen Malzkörper, der lange nachklingt.
+            Eine Fusion aus Kräutern und Leichtigkeit. Das Garden ist der perfekte Begleiter für warme Abende, klare Gedanken und Momente, die nach Frische verlangen. Low Cal, high pleasure.
         </p>
     </div>
     <div class="col-span-12 md:col-span-7 order-1 md:order-2 relative min-h-[400px]">
-        <img alt="Green-red checkerboard pattern" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFp3WJSkOwqbQcgBCoa3DIJHFlBitKXDEFKJcQLNCW8Qo41LbD5F6LWNljYvw8JIrNgBwwDw6QGrXO4vW3r3SAHybMRPgFkF0B5ez6NQAmi3m4o85P1yhj3HyhRguQCFe8T0Mf3FmRRFdLb3qdrv3VOqMzV0ZsXFf8FkXReV9vQ3XT4OzFc2K1diNvrcadMS_nU6B1JJTGtxbzbEBV0bVrdRzzf7ifeMSlqJfvV9uVEujzozU6E68vRTSBHhz-sWHs4P5Qzyoi-AuT"/>
+        <!-- DETAIL-BILD 2 (hier ersetzen) -->
+        <img alt="Sholto Garden Geschmack" class="w-full h-full object-cover" src="../assets/images/produkt-sholto-garden/detail-2.jpg"/>
     </div>
 </section>
 
-<!-- Section 4: Süffigkeit (Drinkability) -->
-<section class="editorial-grid bg-surface-container-low min-h-[614px] items-stretch">
-    <div class="col-span-12 md:col-span-7 relative min-h-[400px]">
-        <img alt="Semi-circle graphic" class="w-full h-full object-cover contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ4A0SuqpE2Lm1WTaiBsIWui_d_pOGEhyR__h9yODTrJGpErzOBLxLMBTeZHRSN8uQ8Ly9XhIDCTLcik9UhQep3NwrZ6CcVMbZ35PzbUrzcyhrkihHZ-evDCO2MKRVnmfQ9VXTIKIhg8r5abZvzOtx50DirRQ0O5ATB2teleX_FgXRiNkEYXq_IA4-djnaJS4e2OUUcNEmVmO58ud97_yXaWgrdtAGhPGh0ML8MxBjNTVTX62oWRcBIMkA8e_BOANhVqSeWtsgNEhr"/>
-    </div>
-    <div class="col-span-12 md:col-span-5 flex flex-col justify-center p-16 md:p-24 bg-surface">
-        <h2 class="font-headline text-xs uppercase tracking-[0.5em] text-primary-container mb-8">Süffigkeit</h2>
-        <h3 class="font-headline text-5xl font-bold leading-tight mb-8">ECHT BIERIG.</h3>
-        <p class="font-body text-xl leading-relaxed text-secondary opacity-90 max-w-md">
-            Keine Kompromisse. Sholto Tutti ist der fruchtig-bierige Durstlöscher für alle, die das Handwerk lieben, aber auf den Alkohol verzichten. Ein ehrliches Brauerzeugnis mit dem gewissen Etwas.
-        </p>
-    </div>
-</section>
-
-<!-- Product Family: TUTTI COMPLETTI -->
+<!-- ============================================================ -->
+<!-- PRODUCT FAMILY -->
+<!-- ============================================================ -->
 <section class="px-10 py-32 bg-surface-container">
     <div class="flex justify-between items-end mb-20">
         <div>
             <h2 class="font-headline text-xs uppercase tracking-[0.5em] text-primary mb-4">The Lineup</h2>
-            <h3 class="font-headline text-6xl font-bold">TUTTI COMPLETTI.</h3>
+            <h3 class="font-headline text-6xl font-bold">DIE SHOLTO RANGE.</h3>
         </div>
         <div class="hidden md:block">
             <p class="font-body text-lg text-secondary max-w-xs">Entdecke die ganze Vielfalt unserer handverlesenen Sorten.</p>
         </div>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-        <!-- Product Card 1: TUTTI -->
         <div class="bg-surface p-8 group cursor-pointer border border-transparent hover:border-primary/10 transition-all">
             <div class="aspect-[3/4] bg-surface-container-low mb-8 flex items-center justify-center">
-                <img alt="Tutti Can" class="w-4/5 h-4/5 object-contain group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmbZuXpXg8ZqlttUgkXbVIWH30GZX_yp7d2rhMqbH3hUwExOqxmwWxdBVc5KkARlBPs28OT_Hb-jqZ_pyOaFNfOFWYgWYZGOYwgVWw4jyUp3vkc7_5xtLN1JACabO4oCegFoFYFj99l1EqWOyNg1SPeRdYQIZdMj4xb3rbVUZHnMfr6N2oXSfT3eAyI2X3AZPODX4rkNgcoNz9j57jC-sj9AfSrFA-6gtAkjm83vg9tA6W2HfjmPc7xAFCVF3P1a4C1f8AqQdqcGQb"/>
+                <img alt="Sholto Tutti" class="w-4/5 h-4/5 object-contain group-hover:scale-110 transition-transform duration-500" src="../assets/images/produkt-sholto-tutti/produkt-haupt.png"/>
             </div>
             <div class="flex justify-between items-center">
                 <div>
                     <h4 class="font-headline text-2xl font-bold">SHOLTO TUTTI</h4>
                     <p class="font-label text-sm uppercase text-primary-container">Non-Alcoholic Ale</p>
                 </div>
-                <span class="font-headline text-xl font-medium">3,90 €</span>
+                <a href="./produkt-sholto-tutti.html" class="font-label text-xs uppercase tracking-widest text-primary hover:underline">Details</a>
             </div>
         </div>
-        <!-- Product Card 2: TILDA -->
         <div class="bg-surface p-8 group cursor-pointer border border-transparent hover:border-primary/10 transition-all">
             <div class="aspect-[3/4] bg-surface-container-low mb-8 flex items-center justify-center">
-                <img alt="Tilda Can" class="w-4/5 h-4/5 object-contain group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-f1W1KiB0YGP_P4oBUb9ay0DFcDP_QNZMtcXFs9h75WEL9WQnwtbY0eAIY-EqYurGZYitAgvnoLsNxkO48ch4WYoE8yGt4K6wYES7VMWJ-pT7B304HdC329wXty1ieMyD7AugbselEcoN_Wx6ZD5ZptS4tSbHbeRLv6y_IjPQJytfA6PQHLS0BqPeAf9I5916_vrqGB0rbJCg9kwQsixNj_e9JGKkj8nM7Ah4ppITLfss5l0xnfpawK3MSx-yRWWaWfO-Nma5AEgY"/>
+                <img alt="Sholto Haze" class="w-4/5 h-4/5 object-contain group-hover:scale-110 transition-transform duration-500" src="../assets/images/produkt-sholto-haze/produkt-haupt.png"/>
             </div>
             <div class="flex justify-between items-center">
                 <div>
-                    <h4 class="font-headline text-2xl font-bold">SHOLTO TILDA</h4>
-                    <p class="font-label text-sm uppercase text-primary-container">Botanical Lager</p>
+                    <h4 class="font-headline text-2xl font-bold">SHOLTO HAZE</h4>
+                    <p class="font-label text-sm uppercase text-primary-container">Urban Classic</p>
                 </div>
-                <span class="font-headline text-xl font-medium">3,90 €</span>
+                <a href="./produkt-sholto-haze.html" class="font-label text-xs uppercase tracking-widest text-primary hover:underline">Details</a>
             </div>
         </div>
-        <!-- Product Card 3: MIXED PACK -->
         <div class="bg-primary p-8 group cursor-pointer transition-all flex flex-col">
             <div class="aspect-[3/4] bg-primary-container/20 mb-8 flex items-center justify-center">
                 <div class="text-on-primary text-center">
@@ -260,12 +270,13 @@
 
 <!-- CTA Section -->
 <section class="px-10 py-40 text-center bg-surface relative">
-    <div class="absolute inset-0 opacity-5 pointer-events-none select-none">
+    <div class="absolute inset-0 opacity-5 pointer-events-none select-none overflow-hidden">
         <div class="font-headline text-[25rem] font-bold text-primary absolute -left-20 top-0 whitespace-nowrap">SHOLTO</div>
     </div>
     <div class="relative z-10">
-        <h2 class="font-headline text-xs uppercase tracking-[0.6em] text-primary-container mb-12">Limited Batch</h2>
-        <h3 class="font-headline text-6xl md:text-8xl font-bold mb-16 tracking-tighter">JETZT TESTEN<br/>UND GEWINNEN.</h3>
+        <h2 class="font-headline text-xs uppercase tracking-[0.6em] text-primary-container mb-12">New Standard</h2>
+        <!-- CTA-TITEL (hier bearbeiten) -->
+        <h3 class="font-headline text-6xl md:text-8xl font-bold mb-16 tracking-tighter">FRISCH.<br/>KLAR.<br/>GARDEN.</h3>
         <a href="https://segos-sholto-shop.myshopify.com" target="_blank" class="inline-block bg-primary text-on-primary px-16 py-6 font-label text-lg font-bold uppercase tracking-[0.2em] transform hover:-translate-y-1 transition-all active:scale-95">
             IN DEN WARENKORB
         </a>
@@ -273,7 +284,6 @@
 </section>
 
 </main>
-
 </div><!-- /main-content -->
 
 <footer class="bg-primary text-background mt-0 pt-16 pb-8">
@@ -286,15 +296,16 @@
             <div>
                 <h4 class="font-headline font-bold text-sm uppercase tracking-widest mb-4">Navigation</h4>
                 <ul class="space-y-3 text-sm">
-                    <li><a href="/index.html" class="text-background/70 hover:text-background transition-colors">Home</a></li>
-                    <li><a href="/pages/philosophie.html" class="text-background/70 hover:text-background transition-colors">Über Uns</a></li>
-                    <li><a href="/pages/taproom.html" class="text-background/70 hover:text-background transition-colors">Taproom</a></li>
-                    <li><a href="/pages/enjoy-buy.html" class="text-background/70 hover:text-background transition-colors">Enjoy &amp; Buy local</a></li>
+                    <li><a href="../index.html" class="text-background/70 hover:text-background transition-colors">Home</a></li>
+                    <li><a href="./philosophie.html" class="text-background/70 hover:text-background transition-colors">Brauerei</a></li>
+                    <li><a href="./taproom.html" class="text-background/70 hover:text-background transition-colors">Taproom</a></li>
+                    <li><a href="./enjoy-buy.html" class="text-background/70 hover:text-background transition-colors">Enjoy &amp; Buy local</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="font-headline font-bold text-sm uppercase tracking-widest mb-4">Kontakt</h4>
                 <ul class="space-y-3 text-sm">
+                    <li class="text-background/70 font-bold">Segos Braumanufaktur GmbH</li>
                     <li class="text-background/70">Römerstraße 88<br>6811 Göfis, Vorarlberg</li>
                     <li><a href="tel:+436767750027" class="text-background/70 hover:text-background transition-colors">+43 676 77 500 27</a></li>
                     <li><a href="mailto:office@segos.beer" class="text-background/70 hover:text-background transition-colors">office@segos.beer</a></li>
@@ -307,10 +318,10 @@
                 </div>
                 <h4 class="font-headline font-bold text-sm uppercase tracking-widest mb-4">Legal</h4>
                 <ul class="space-y-3 text-sm">
-                    <li><a href="/pages/impressum.html" class="text-background/70 hover:text-background transition-colors">Impressum</a></li>
-                    <li><a href="/pages/datenschutz.html" class="text-background/70 hover:text-background transition-colors">Datenschutz</a></li>
-                    <li><a href="/pages/agb.html" class="text-background/70 hover:text-background transition-colors">AGB</a></li>
-                    <li><a href="/pages/agb.html#widerruf" class="text-background/70 hover:text-background transition-colors">Widerrufsbelehrung</a></li>
+                    <li><a href="./impressum.html" class="text-background/70 hover:text-background transition-colors">Impressum</a></li>
+                    <li><a href="./datenschutz.html" class="text-background/70 hover:text-background transition-colors">Datenschutz</a></li>
+                    <li><a href="./agb.html" class="text-background/70 hover:text-background transition-colors">AGB</a></li>
+                    <li><a href="./agb.html#widerruf" class="text-background/70 hover:text-background transition-colors">Widerrufsbelehrung</a></li>
                 </ul>
             </div>
         </div>
@@ -321,9 +332,8 @@
                 <button type="submit" class="bg-background text-primary px-6 py-3 font-label font-bold uppercase text-xs tracking-widest hover:bg-background/90 transition-all">Abonnieren</button>
             </form>
         </div>
-        <!-- Jugendschutz & Alkohol-Warnhinweis -->
         <div class="border-t border-background/20 pt-6 pb-4 text-center">
-            <p class="text-background/40 text-xs uppercase tracking-widest leading-relaxed">Alkohol schadet Ihrer Gesundheit &mdash; Bitte trinken Sie verantwortungsbewusst.<br>Kein Verkauf oder Abgabe an Personen unter 16 Jahren (Bier/Wein) bzw. 18 Jahren (Spirituosen).</p>
+            <p class="text-background/40 text-xs uppercase tracking-widest leading-relaxed">Kein Alkohol — Für alle geeignet. Natürliche Zutaten, ohne Zusatzstoffe.</p>
         </div>
         <div class="pt-2 text-center text-sm text-background/50">
             <p>&copy; 2026 Segos Braumanufaktur GmbH. Alle Rechte vorbehalten.</p>
@@ -332,8 +342,8 @@
 </footer>
 
 <script type="module">
-    import CONFIG from '/assets/js/config.js';
-    import { AgeGate } from '/assets/js/utils.js';
+    import CONFIG from '../assets/js/config.js';
+    import { AgeGate } from '../assets/js/utils.js';
     window.AgeGate = AgeGate;
     window.CONFIG = CONFIG;
 </script>

@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Segos Braumanufaktur — Website Guide</title>
+<style>
+  :root {
+    --primary: #242b18;
+    --bg: #fef9ee;
+    --accent: #3a412c;
+    --muted: #76786f;
+    --border: #c7c7bc;
+    --surface: #f2ede2;
+    --highlight: #dee6c9;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--primary);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  /* --- COVER PAGE --- */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px;
+    background: var(--primary);
+    color: var(--bg);
+    page-break-after: always;
+  }
+  .cover-top { }
+  .cover-brand {
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 8px;
+  }
+  .cover-logo {
+    font-size: 80px;
+    font-weight: 900;
+    letter-spacing: -4px;
+    line-height: 0.9;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .cover-sub {
+    font-size: 14px;
+    opacity: 0.6;
+    letter-spacing: 0.1em;
+  }
+  .cover-title-block {
+    margin-top: auto;
+    padding-top: 80px;
+  }
+  .cover-doc-label {
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    opacity: 0.4;
+    margin-bottom: 12px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 16px;
+  }
+  .cover-title {
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    line-height: 1.0;
+    margin-bottom: 24px;
+  }
+  .cover-desc {
+    font-size: 14px;
+    opacity: 0.65;
+    max-width: 480px;
+    line-height: 1.7;
+  }
+  .cover-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 20px;
+    font-size: 10px;
+    opacity: 0.4;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* --- CONTENT PAGES --- */
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 60px 60px 40px 60px;
+    page-break-after: always;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  /* Chapter Header */
+  .chapter-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-bottom: 3px solid var(--primary);
+    padding-bottom: 12px;
+    margin-bottom: 36px;
+  }
+  .chapter-number {
+    font-size: 64px;
+    font-weight: 900;
+    letter-spacing: -4px;
+    color: var(--border);
+    line-height: 1;
+  }
+  .chapter-title-block { text-align: right; }
+  .chapter-label {
+    font-size: 9px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .chapter-title {
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
+
+  /* Section */
+  .section {
+    margin-bottom: 40px;
+  }
+  .section-title {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--primary);
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Cards */
+  .card {
+    background: var(--surface);
+    padding: 20px 24px;
+    margin-bottom: 12px;
+  }
+  .card-title {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .card p { color: var(--muted); font-size: 12px; margin-bottom: 6px; }
+  .card p:last-child { margin-bottom: 0; }
+
+  /* Page Entry (for each website page) */
+  .page-entry {
+    background: var(--surface);
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin-bottom: 20px;
+  }
+  .page-entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  .page-entry-title {
+    font-size: 15px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+  }
+  .page-entry-file {
+    font-size: 10px;
+    font-family: 'Courier New', monospace;
+    background: var(--primary);
+    color: var(--bg);
+    padding: 3px 8px;
+    letter-spacing: 0.05em;
+  }
+  .page-entry p { color: var(--muted); font-size: 12px; margin-bottom: 8px; }
+
+  /* Edit Table */
+  .edit-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  .edit-table th {
+    background: var(--primary);
+    color: var(--bg);
+    padding: 7px 10px;
+    text-align: left;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+  }
+  .edit-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .edit-table tr:last-child td { border-bottom: none; }
+  .edit-table tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+  .code { font-family: 'Courier New', monospace; background: var(--highlight); padding: 1px 5px; font-size: 11px; }
+
+  /* Step */
+  .steps { counter-reset: step; }
+  .step {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 18px;
+    align-items: flex-start;
+  }
+  .step-num {
+    min-width: 32px;
+    height: 32px;
+    background: var(--primary);
+    color: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+  .step-content { flex: 1; padding-top: 6px; }
+  .step-title { font-weight: 700; font-size: 13px; margin-bottom: 4px; }
+  .step-desc { color: var(--muted); font-size: 12px; }
+
+  /* Warning / Info Box */
+  .infobox {
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .infobox.warning {
+    background: #fff3cd;
+    border-left: 4px solid #f59e0b;
+  }
+  .infobox.info {
+    background: var(--highlight);
+    border-left: 4px solid var(--accent);
+  }
+  .infobox.danger {
+    background: #fde8e8;
+    border-left: 4px solid #dc2626;
+  }
+  .infobox strong { display: block; margin-bottom: 4px; text-transform: uppercase; font-size: 10px; letter-spacing: 0.2em; }
+
+  /* Folder Tree */
+  .folder-tree {
+    background: var(--primary);
+    color: var(--bg);
+    padding: 24px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+  }
+  .folder-tree .folder { color: #c2caae; font-weight: bold; }
+  .folder-tree .file { color: rgba(255,255,255,0.65); }
+  .folder-tree .comment { color: rgba(255,255,255,0.35); font-style: italic; }
+
+  /* Two columns */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+
+  /* Tag */
+  .tag {
+    display: inline-block;
+    background: var(--primary);
+    color: var(--bg);
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 2px 8px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+  }
+  .tag.green { background: #3a412c; }
+  .tag.orange { background: #92400e; }
+  .tag.red { background: #7f1d1d; }
+
+  /* Print styles */
+  @media print {
+    body { background: white; }
+    .cover { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page-entry-file { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .edit-table th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .step-num { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .folder-tree { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  /* Print button (only screen) */
+  @media screen {
+    .print-bar {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 100;
+    }
+    .print-btn {
+      background: var(--primary);
+      color: var(--bg);
+      border: none;
+      padding: 14px 28px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .print-btn:hover { background: var(--accent); }
+  }
+  @media print {
+    .print-bar { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PRINT BUTTON -->
+<div class="print-bar">
+  <button class="print-btn" onclick="window.print()">&#128438; Als PDF speichern</button>
+</div>
+
+<!-- ============================================================ -->
+<!-- COVER PAGE -->
+<!-- ============================================================ -->
+<div class="cover">
+  <div class="cover-top">
+    <div class="cover-brand">Segos Braumanufaktur GmbH</div>
+    <div class="cover-logo">SEGOS</div>
+    <div class="cover-sub">Braumanufaktur — segos.beer</div>
+  </div>
+
+  <div class="cover-title-block">
+    <div class="cover-doc-label">Internes Dokument — Vertraulich</div>
+    <div class="cover-title">Website Content<br>Bearbeitungs-<br>Guide</div>
+    <p class="cover-desc">
+      Dieser Guide erklärt Schritt für Schritt, wie du die Segos-Website mit eigenen Inhalten befüllst, Bilder austauschst und Texte bearbeitest — ohne Programmierkenntnisse.
+    </p>
+  </div>
+
+  <div class="cover-footer">
+    <span>Version 1.0 — April 2026</span>
+    <span>Erstellt mit Claude Code</span>
+    <span>Nur für internen Gebrauch</span>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KAPITEL 1: ÜBERSICHT & ORDNERSTRUKTUR -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="chapter-header">
+    <div class="chapter-number">01</div>
+    <div class="chapter-title-block">
+      <div class="chapter-label">Kapitel Eins</div>
+      <div class="chapter-title">Ordnerstruktur<br>& Übersicht</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Wo liegt die Website?</div>
+    <div class="folder-tree">
+<span class="folder">segos-sholto-website/</span>               <span class="comment">← Haupt-Ordner der Website</span>
+│
+├── <span class="folder">assets/</span>
+│   ├── <span class="folder">images/</span>                     <span class="comment">← ALLE BILDER kommen hier rein</span>
+│   │   ├── <span class="folder">allgemein/</span>              <span class="comment">← Logo, Favicon, Social-Media-Bild</span>
+│   │   ├── <span class="folder">home/</span>                   <span class="comment">← Bilder für die Startseite</span>
+│   │   ├── <span class="folder">unsere-marken/</span>          <span class="comment">← Bilder für Marken-Übersicht</span>
+│   │   ├── <span class="folder">segos-sortiment/</span>        <span class="comment">← Bilder Segos Biere</span>
+│   │   ├── <span class="folder">sholto-sortiment/</span>       <span class="comment">← Bilder Sholto Biere</span>
+│   │   ├── <span class="folder">produkt-segos-ipa/</span>      <span class="comment">← Produktbilder Segos IPA</span>
+│   │   ├── <span class="folder">produkt-sholto-tutti/</span>   <span class="comment">← Produktbilder Sholto Tutti</span>
+│   │   ├── <span class="folder">philosophie/</span>            <span class="comment">← Bilder Brauerei-Seite</span>
+│   │   ├── <span class="folder">taproom/</span>                <span class="comment">← Bilder Taproom-Seite</span>
+│   │   └── <span class="folder">enjoy-buy/</span>              <span class="comment">← Bilder Gastro/Partner-Seite</span>
+│   └── <span class="folder">js/</span>
+│       └── <span class="file">config.js</span>               <span class="comment">← Shop-URL & Einstellungen</span>
+│
+├── <span class="folder">pages/</span>                          <span class="comment">← Alle Unterseiten</span>
+│   ├── <span class="file">unsere-marken.html</span>
+│   ├── <span class="file">segos-sortiment.html</span>
+│   ├── <span class="file">sholto-sortiment.html</span>
+│   ├── <span class="file">produkt-segos-ipa.html</span>
+│   ├── <span class="file">produkt-sholto-tutti.html</span>
+│   ├── <span class="file">philosophie.html</span>
+│   ├── <span class="file">taproom.html</span>
+│   ├── <span class="file">enjoy-buy.html</span>
+│   ├── <span class="file">agb.html</span>
+│   ├── <span class="file">datenschutz.html</span>
+│   └── <span class="file">impressum.html</span>
+│
+└── <span class="file">index.html</span>                      <span class="comment">← Startseite</span>
+    </div>
+    <div class="infobox info">
+      <strong>Wichtig</strong>
+      In jedem Bild-Ordner findest du eine Datei namens <span class="code">LIES_MICH.md</span> — sie erklärt genau welche Bilder dort hingehören, mit welchem Dateinamen und in welcher Größe.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Welches Programm zum Bearbeiten?</div>
+    <div class="two-col">
+      <div class="card">
+        <div class="card-title">Empfehlung: VS Code</div>
+        <p>Kostenlos, einfach zu bedienen. Öffne den Haupt-Ordner "segos-sholto-website" und du siehst alle Dateien in der linken Leiste.</p>
+        <p>Download: <strong>code.visualstudio.com</strong></p>
+      </div>
+      <div class="card">
+        <div class="card-title">Alternativ: Texteditor</div>
+        <p>Jeder einfache Texteditor funktioniert (z.B. TextEdit auf Mac, Editor auf Windows). HTML-Dateien sind normale Textdateien.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KAPITEL 2: BILDER EINBINDEN -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="chapter-header">
+    <div class="chapter-number">02</div>
+    <div class="chapter-title-block">
+      <div class="chapter-label">Kapitel Zwei</div>
+      <div class="chapter-title">Bilder einbinden<br>& ersetzen</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Schritt für Schritt: Ein Bild ersetzen</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title">Bild vorbereiten</div>
+          <div class="step-desc">Bild auf dem Computer in JPG oder PNG speichern. Empfehlung: auf squoosh.app komprimieren, sodass es max. 500 KB groß ist. Dateinamen ohne Leerzeichen und Umlaute wählen (z.B. <span class="code">brauerei-hero.jpg</span> statt <span class="code">Brauerei Foto final.jpg</span>).</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title">Bild in den richtigen Ordner kopieren</div>
+          <div class="step-desc">Das Bild in den passenden Unterordner unter <span class="code">assets/images/</span> kopieren. Zum Beispiel ein Taproom-Bild nach <span class="code">assets/images/taproom/hero.jpg</span>. Die LIES_MICH.md-Datei im Ordner zeigt welche Dateinamen erwartet werden.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title">HTML-Datei öffnen</div>
+          <div class="step-desc">Die zugehörige HTML-Datei in VS Code öffnen (z.B. <span class="code">pages/taproom.html</span>). Mit der Tastenkombination <strong>Ctrl+F</strong> (Windows) oder <strong>Cmd+F</strong> (Mac) nach dem alten Bild-Link suchen.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <div class="step-title">Alten Bildlink ersetzen</div>
+          <div class="step-desc">Den alten langen Google-Link <span class="code">https://lh3.googleusercontent.com/...</span> durch den neuen lokalen Pfad ersetzen. Zum Beispiel: <span class="code">../assets/images/taproom/hero.jpg</span> (für Seiten im pages/ Ordner) oder <span class="code">./assets/images/home/hero.jpg</span> (für die Startseite index.html).</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <div class="step-title">Speichern & Testen</div>
+          <div class="step-desc">Datei speichern (Ctrl+S / Cmd+S). HTML-Datei im Browser öffnen (Doppelklick auf die Datei) und prüfen ob das Bild korrekt angezeigt wird.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Pfad-Schema: So wird ein Bildpfad geschrieben</div>
+    <table class="edit-table">
+      <tr>
+        <th>Datei</th>
+        <th>Pfad zum Bild</th>
+        <th>Erklärung</th>
+      </tr>
+      <tr>
+        <td><span class="code">index.html</span></td>
+        <td><span class="code">./assets/images/home/hero.jpg</span></td>
+        <td>Startet mit <code>./</code> (aktueller Ordner)</td>
+      </tr>
+      <tr>
+        <td><span class="code">pages/taproom.html</span></td>
+        <td><span class="code">../assets/images/taproom/hero.jpg</span></td>
+        <td>Startet mit <code>../</code> (ein Ordner zurück)</td>
+      </tr>
+      <tr>
+        <td><span class="code">pages/philosophie.html</span></td>
+        <td><span class="code">../assets/images/philosophie/brauerei-1.jpg</span></td>
+        <td>Startet mit <code>../</code> (ein Ordner zurück)</td>
+      </tr>
+    </table>
+    <div class="infobox warning">
+      <strong>Achtung</strong>
+      Groß-/Kleinschreibung beachten! <span class="code">Hero.jpg</span> ist NICHT dasselbe wie <span class="code">hero.jpg</span>. Am sichersten: Dateinamen immer komplett kleinschreiben.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Empfohlene Bildformate & Qualität</div>
+    <div class="two-col">
+      <div class="card">
+        <div class="card-title">JPG — Für Fotos</div>
+        <p>Ideal für alle Fotos (Brauerei, Taproom, Atmosphäre). Qualität 80–85% reicht für Websites vollkommen aus. Max. 600 KB pro Bild.</p>
+        <p><span class="tag green">Hintergrundbilder</span><span class="tag green">Atmosphäre</span><span class="tag green">Portraits</span></p>
+      </div>
+      <div class="card">
+        <div class="card-title">PNG — Für Produktbilder</div>
+        <p>Nur für Produktbilder (Dosen, Flaschen) die einen transparenten Hintergrund brauchen. PNG-Dateien sind größer, also sparsam einsetzen.</p>
+        <p><span class="tag orange">Produktfotos</span><span class="tag orange">Logo</span><span class="tag orange">Icons</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KAPITEL 3: TEXTE BEARBEITEN -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="chapter-header">
+    <div class="chapter-number">03</div>
+    <div class="chapter-title-block">
+      <div class="chapter-label">Kapitel Drei</div>
+      <div class="chapter-title">Texte bearbeiten<br>— Grundregeln</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Wie Text in HTML aussieht</div>
+    <p style="margin-bottom: 12px; font-size: 12px; color: var(--muted);">HTML-Dateien haben Text der von spitzen Klammern umgeben ist. Du musst NUR den Text zwischen den Tags ändern, NICHT die Tags selbst.</p>
+    <div class="folder-tree" style="font-size: 12px; line-height: 2.2;">
+<span class="comment">SO SIEHT ES AUS:</span>
+&lt;h1 class="font-headline..."&gt;<span style="color:#c2caae">The Science of Soul.</span>&lt;/h1&gt;
+
+<span class="comment">SO ÄNDERST DU DEN TEXT:</span>
+&lt;h1 class="font-headline..."&gt;<span style="color:#c2caae">Dein neuer Titel hier.</span>&lt;/h1&gt;
+
+<span class="comment">NUR DEN INHALT ÄNDERN — NICHT DIE TAGS (&lt;h1&gt; und &lt;/h1&gt;) ANFASSEN!</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Die wichtigsten HTML-Elemente erklärt</div>
+    <table class="edit-table">
+      <tr>
+        <th>HTML-Tag</th>
+        <th>Bedeutung</th>
+        <th>Beispiel</th>
+      </tr>
+      <tr>
+        <td><span class="code">&lt;h1&gt;</span></td>
+        <td>Haupt-Überschrift (groß, fett)</td>
+        <td>"The Science of Soul."</td>
+      </tr>
+      <tr>
+        <td><span class="code">&lt;h2&gt;</span></td>
+        <td>Abschnitts-Überschrift</td>
+        <td>"Current Batch"</td>
+      </tr>
+      <tr>
+        <td><span class="code">&lt;h3&gt;</span></td>
+        <td>Unter-Überschrift</td>
+        <td>Produktname</td>
+      </tr>
+      <tr>
+        <td><span class="code">&lt;p&gt;</span></td>
+        <td>Fließtext / Beschreibung</td>
+        <td>Längerer Beschreibungstext</td>
+      </tr>
+      <tr>
+        <td><span class="code">&lt;span&gt;</span></td>
+        <td>Kleiner Label-Text</td>
+        <td>"Established 2024"</td>
+      </tr>
+      <tr>
+        <td><span class="code">&lt;a href="..."&gt;</span></td>
+        <td>Link (z.B. zum Shop)</td>
+        <td>Shop-URL im href-Attribut</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Suchen & Ersetzen — Der schnellste Weg</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title">Datei öffnen, Suche öffnen</div>
+          <div class="step-desc">In VS Code die HTML-Datei öffnen. Dann <strong>Ctrl+H</strong> (Windows) oder <strong>Cmd+Option+F</strong> (Mac) drücken. Damit öffnet sich "Suchen & Ersetzen".</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title">Alten Text eingeben</div>
+          <div class="step-desc">Im oberen Feld den Text eingeben den du ersetzen willst. Z.B. <span class="code">The Science of Soul.</span></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title">Neuen Text eingeben & ersetzen</div>
+          <div class="step-desc">Im unteren Feld den neuen Text eingeben. Dann "Ersetzen" oder "Alle ersetzen" klicken. Speichern nicht vergessen!</div>
+        </div>
+      </div>
+    </div>
+    <div class="infobox danger">
+      <strong>Niemals anfassen</strong>
+      Alles was mit <span class="code">class="..."</span>, <span class="code">href="..."</span>, <span class="code">src="..."</span>, <span class="code">onclick="..."</span> oder <span class="code">id="..."</span> anfängt — das sind Styling- und Funktions-Anweisungen. Nur den sichtbaren Text dazwischen ändern.
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KAPITEL 4: SEITE FÜR SEITE — STARTSEITE -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="chapter-header">
+    <div class="chapter-number">04</div>
+    <div class="chapter-title-block">
+      <div class="chapter-label">Kapitel Vier</div>
+      <div class="chapter-title">Seiten-Guide:<br>Startseite & Marken</div>
+    </div>
+  </div>
+
+  <div class="page-entry">
+    <div class="page-entry-header">
+      <div class="page-entry-title">Startseite (Home)</div>
+      <div class="page-entry-file">index.html</div>
+    </div>
+    <p>Die Hauptseite der Website. Wird angezeigt wenn jemand segos.beer aufruft.</p>
+    <table class="edit-table">
+      <tr>
+        <th>Bereich</th>
+        <th>Was du ändern kannst</th>
+        <th>Suche nach diesem Text</th>
+      </tr>
+      <tr>
+        <td>Hero — Tagline</td>
+        <td>Großer Slogan oben</td>
+        <td><span class="code">The Science &lt;br/&gt;of Soul.</span></td>
+      </tr>
+      <tr>
+        <td>Hero — Beschreibung</td>
+        <td>Text unter der Tagline</td>
+        <td><span class="code">Handwerklich perfektionierte Braukunst</span></td>
+      </tr>
+      <tr>
+        <td>Hero — CTA Button</td>
+        <td>Text auf dem Button</td>
+        <td><span class="code">Jetzt Entdecken</span></td>
+      </tr>
+      <tr>
+        <td>Segos Marken-Karte</td>
+        <td>Beschreibungstext Segos</td>
+        <td><span class="code">Unsere Heritage-Linie. Klassische</span></td>
+      </tr>
+      <tr>
+        <td>Sholto Marken-Karte</td>
+        <td>Beschreibungstext Sholto</td>
+        <td><span class="code">Das Laboratorium. Hier bricht</span></td>
+      </tr>
+      <tr>
+        <td>Produkt 1 — Name</td>
+        <td>Produktname große Karte</td>
+        <td><span class="code">Midnight Machinist</span></td>
+      </tr>
+      <tr>
+        <td>Produkt 1 — Typ & ABV</td>
+        <td>Biersorte und Alkohol</td>
+        <td><span class="code">Imperial Stout | 9.2% ABV</span></td>
+      </tr>
+      <tr>
+        <td>Produkt 1 — Kennzahlen</td>
+        <td>ABV, IBU, EBC-Werte</td>
+        <td><span class="code">&gt;9.2&lt;</span> / <span class="code">&gt;65&lt;</span> / <span class="code">&gt;120&lt;</span></td>
+      </tr>
+      <tr>
+        <td>Produkt 2 — Name</td>
+        <td>Produktname mittlere Karte</td>
+        <td><span class="code">Steel Haze</span></td>
+      </tr>
+      <tr>
+        <td>Produkt 3 — Name</td>
+        <td>Produktname rechte Karte</td>
+        <td><span class="code">Oxide Pale</span></td>
+      </tr>
+      <tr>
+        <td>CTA-Banner</td>
+        <td>Großer Werbetext Mitte</td>
+        <td><span class="code">Bereit für den ersten Schluck?</span></td>
+      </tr>
+      <tr>
+        <td>Hero — Bild</td>
+        <td>Hintergrundbild Brauerei</td>
+        <td>Datei: <span class="code">assets/images/home/hero.jpg</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="page-entry">
+    <div class="page-entry-header">
+      <div class="page-entry-title">Unsere Marken</div>
+      <div class="page-entry-file">pages/unsere-marken.html</div>
+    </div>
+    <p>Übersichtsseite mit beiden Marken Segos und Sholto.</p>
+    <table class="edit-table">
+      <tr>
+        <th>Bereich</th>
+        <th>Was du ändern kannst</th>
+        <th>Suche nach diesem Text</th>
+      </tr>
+      <tr>
+        <td>Seiten-Titel</td>
+        <td>Hauptüberschrift der Seite</td>
+        <td><span class="code">Zwei Marken.</span> (im h1-Tag)</td>
+      </tr>
+      <tr>
+        <td>Segos — Beschreibung</td>
+        <td>Markenbeschreibung Segos</td>
+        <td><span class="code">Heritage-Linie</span></td>
+      </tr>
+      <tr>
+        <td>Sholto — Beschreibung</td>
+        <td>Markenbeschreibung Sholto</td>
+        <td><span class="code">Das Laboratorium</span> (in unsere-marken)</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KAPITEL 5: SEITEN-GUIDE — SORTIMENT & PRODUKTE -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="chapter-header">
+    <div class="chapter-number">05</div>
+    <div class="chapter-title-block">
+      <div class="chapter-label">Kapitel Fünf</div>
+      <div class="chapter-title">Seiten-Guide:<br>Sortiment & Produkte</div>
+    </div>
+  </div>
+
+  <div class="page-entry">
+    <div class="page-entry-header">
+      <div class="page-entry-title">Segos Sortiment</div>
+      <div class="page-entry-file">pages/segos-sortiment.html</div>
+    </div>
+    <p>Alle Segos-Biere in der Übersicht. Hier werden neue Produkte hinzugefügt oder bestehende aktualisiert.</p>
+    <table class="edit-table">
+      <tr>
+        <th>Bereich</th>
+        <th>Was du ändern kannst</th>
+        <th>Suche nach diesem Text</th>
+      </tr>
+      <tr>
+        <td>Hero-Titel</td>
+        <td>Großer Seitenname oben</td>
+        <td><span class="code">SEGOS SORTIMENT</span> oder <span class="code">Premium Handwerk</span></td>
+      </tr>
+      <tr>
+        <td>Hero-Beschreibung</td>
+        <td>Text unter dem Titel</td>
+        <td><span class="code">Heritage-Linie</span> (erster Absatz der Seite)</td>
+      </tr>
+      <tr>
+        <td>Produktkarte — Name</td>
+        <td>Name jedes Bieres</td>
+        <td>Direkt im <span class="code">&lt;h3&gt;</span> Tag suchen</td>
+      </tr>
+      <tr>
+        <td>Produktkarte — Sorte + ABV</td>
+        <td>Biersorte und Alkoholgehalt</td>
+        <td>Im <span class="code">&lt;p&gt;</span>-Tag direkt nach dem h3</td>
+      </tr>
+      <tr>
+        <td>Produktkarte — Beschreibung</td>
+        <td>Beschreibungstext des Biers</td>
+        <td>Längerer Text unter Sortenangabe</td>
+      </tr>
+      <tr>
+        <td>Bild — Produktdose</td>
+        <td>Foto jeder Dose/Flasche</td>
+        <td>Datei: <span class="code">../assets/images/segos-sortiment/</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="page-entry">
+    <div class="page-entry-header">
+      <div class="page-entry-title">Sholto Sortiment</div>
+      <div class="page-entry-file">pages/sholto-sortiment.html</div>
+    </div>
+    <p>Alle Sholto-Biere (alkoholfrei/modern). Gleicher Aufbau wie Segos Sortiment.</p>
+    <table class="edit-table">
+      <tr>
+        <th>Bereich</th>
+        <th>Was du ändern kannst</th>
+        <th>Suche nach diesem Text</th>
+      </tr>
+      <tr>
+        <td>Hero-Titel</td>
+        <td>Seitenname oben</td>
+        <td><span class="code">SHOLTO SORTIMENT</span></td>
+      </tr>
+      <tr>
+        <td>Produktkarten</td>
+        <td>Namen, Sorten, Beschreibungen</td>
+        <td>Gleiche Struktur wie Segos</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="page-entry">
+    <div class="page-entry-header">
+      <div class="page-entry-title">Produktseite: Segos IPA</div>
+      <div class="page-entry-file">pages/produkt-segos-ipa.html</div>
+    </div>
+    <p>Detailseite für das Segos IPA. Hier stehen alle technischen Details und Beschreibungen des Biers.</p>
+    <table class="edit-table">
+      <tr>
+        <th>Bereich</th>
+        <th>Was du ändern kannst</th>
+        <th>Suche nach diesem Text</th>
+      </tr>
+      <tr>
+        <td>Produktname</td>
+        <td>Name des Biers (groß)</td>
+        <td><span class="code">SEGOS IPA</span> im h1-Tag</td>
+      </tr>
+      <tr>
+        <td>Untertitel / Slogan</td>
+        <td>Kurzer Claim des Biers</td>
+        <td><span class="code">Die Hopfen-Alchemie</span></td>
+      </tr>
+      <tr>
+        <td>Beschreibung</td>
+        <td>Langer Beschreibungstext</td>
+        <td><span class="code">6.8% ABV</span> oder <span class="code">Citra und Mosaic</span></td>
+      </tr>
+      <tr>
+        <td>ABV-Wert</td>
+        <td>Alkoholgehalt</td>
+        <td><span class="code">6.8</span> (Zahl direkt)</td>
+      </tr>
+      <tr>
+        <td>IBU-Wert</td>
+        <td>Bittereinheiten</td>
+        <td><span class="code">55</span> (Zahl direkt)</td>
+      </tr>
+      <tr>
+        <td>Hauptbild</td>
+        <td>Produktfoto Dose/Flasche</td>
+        <td>Datei: <span class="code">../assets/images/produkt-segos-ipa/produkt-haupt.png</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="page-entry">
+    <div class="page-entry-header">
+      <div class="page-entry-title">Produktseite: Sholto Tutti Frutti</div>
+      <div class="page-entry-file">pages/produkt-sholto-tutti.html</div>
+    </div>
+    <p>Detailseite für das Sholto Tutti Frutti. Gleicher Aufbau wie Segos IPA-Seite.</p>
+    <table class="edit-table">
+      <tr>
+        <th>Bereich</th>
+        <th>Was du ändern kannst</th>
+        <th>Suche nach diesem Text</th>
+      </tr>
+      <tr>
+        <td>Produktname</td>
+        <td>Name des Biers</td>
+        <td><span class="code">SHOLTO TUTTI</span> im h1-Tag</td>
+      </tr>
+      <tr>
+        <td>Beschreibung, ABV, IBU</td>
+        <td>Alle technischen Details</td>
+        <td>Gleiche Struktur wie IPA-Seite</td>
+      </tr>
+      <tr>
+        <td>Hauptbild</td>
+        <td>Produktfoto</td>
+        <td>Datei: <span class="code">../assets/images/produkt-sholto-tutti/produkt-haupt.png</span></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KAPITEL 6: SEITEN-GUIDE — BRAUEREI, TAPROOM, ENJOY & BUY -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="chapter-header">
+    <div class="chapter-number">06</div>
+    <div class="chapter-title-block">
+      <div class="chapter-label">Kapitel Sechs</div>
+      <div class="chapter-title">Seiten-Guide:<br>Brauerei, Taproom &<br>Enjoy & Buy</div>
+    </div>
+  </div>
+
+  <div class="page-entry">
+    <div class="page-entry-header">
+      <div class="page-entry-title">Brauerei / Philosophie</div>
+      <div class="page-entry-file">pages/philosophie.html</div>
+    </div>
+    <p>Die "Über uns"-Seite der Brauerei. Erzählt die Geschichte und Philosophie hinter Segos.</p>
+    <table class="edit-table">
+      <tr>
+        <th>Bereich</th>
+        <th>Was du ändern kannst</th>
+        <th>Suche nach diesem Text</th>
+      </tr>
+      <tr>
+        <td>Haupt-Headline</td>
+        <td>Großer Titel oben</td>
+        <td><span class="code">ARTISAN FOUNDRY</span> oder <span class="code">BRAUEREI</span></td>
+      </tr>
+      <tr>
+        <td>Intro-Text</td>
+        <td>Einleitungstext der Seite</td>
+        <td>Erster <span class="code">&lt;p&gt;</span>-Text nach dem h1</td>
+      </tr>
+      <tr>
+        <td>Philosophie-Abschnitte</td>
+        <td>Texte zu Werten, Prozess, Geschichte</td>
+        <td>Über <span class="code">&lt;h2&gt;</span> und <span class="code">&lt;p&gt;</span> Tags auffindbar</td>
+      </tr>
+      <tr>
+        <td>Gründungsjahr</td>
+        <td>Jahr der Gründung</td>
+        <td><span class="code">2024</span> (als Text suchen)</td>
+      </tr>
+      <tr>
+        <td>Bilder</td>
+        <td>Brauerei-Fotos</td>
+        <td>Datei: <span class="code">../assets/images/philosophie/</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="page-entry">
+    <div class="page-entry-header">
+      <div class="page-entry-title">Taproom</div>
+      <div class="page-entry-file">pages/taproom.html</div>
+    </div>
+    <p>Informationen über den Taproom: Öffnungszeiten, Adresse, Atmosphäre.</p>
+    <table class="edit-table">
+      <tr>
+        <th>Bereich</th>
+        <th>Was du ändern kannst</th>
+        <th>Suche nach diesem Text</th>
+      </tr>
+      <tr>
+        <td>Intro-Text</td>
+        <td>Beschreibungstext oben</td>
+        <td><span class="code">Besuchen Sie das Herz unserer Manufaktur</span></td>
+      </tr>
+      <tr>
+        <td>Öffnungszeiten Mo-Di</td>
+        <td>Tage und Uhrzeiten</td>
+        <td><span class="code">Mo — Di</span></td>
+      </tr>
+      <tr>
+        <td>Öffnungszeiten Mi-Do</td>
+        <td>Uhrzeiten Mittwoch-Donnerstag</td>
+        <td><span class="code">16:00 — 22:00</span></td>
+      </tr>
+      <tr>
+        <td>Öffnungszeiten Freitag</td>
+        <td>Uhrzeiten Freitag</td>
+        <td><span class="code">16:00 — 00:00</span></td>
+      </tr>
+      <tr>
+        <td>Öffnungszeiten Sa-So</td>
+        <td>Uhrzeiten Wochenende</td>
+        <td>Nach <span class="code">Sa</span> oder <span class="code">So</span> suchen</td>
+      </tr>
+      <tr>
+        <td>Adresse</td>
+        <td>Straße, PLZ, Ort</td>
+        <td>Nach der Adresse suchen (z.B. Straßenname)</td>
+      </tr>
+      <tr>
+        <td>Google Maps Link</td>
+        <td>Link zur Karte</td>
+        <td><span class="code">maps.google.com</span> oder <span class="code">goo.gl/maps</span></td>
+      </tr>
+      <tr>
+        <td>Hero-Bild</td>
+        <td>Porträt-Bild rechts oben</td>
+        <td>Datei: <span class="code">../assets/images/taproom/hero.jpg</span></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="page-entry">
+    <div class="page-entry-header">
+      <div class="page-entry-title">Enjoy & Buy local</div>
+      <div class="page-entry-file">pages/enjoy-buy.html</div>
+    </div>
+    <p>B2B-Seite für Gastronomie und Fachhandel. Enthält Kontaktformular und Werte-Beschreibung.</p>
+    <table class="edit-table">
+      <tr>
+        <th>Bereich</th>
+        <th>Was du ändern kannst</th>
+        <th>Suche nach diesem Text</th>
+      </tr>
+      <tr>
+        <td>Hero-Headline</td>
+        <td>Hauptslogan der Seite</td>
+        <td><span class="code">Partnerschaft auf Augenhöhe.</span></td>
+      </tr>
+      <tr>
+        <td>Hero-Beschreibung</td>
+        <td>Erklärungstext für Partner</td>
+        <td><span class="code">Wir liefern nicht nur Bier.</span></td>
+      </tr>
+      <tr>
+        <td>Warum-Wir Titel</td>
+        <td>Abschnittstitel Vorteile</td>
+        <td><span class="code">Warum Segos Braumanufaktur?</span></td>
+      </tr>
+      <tr>
+        <td>Qualitäts-Box</td>
+        <td>Texte in den Werte-Karten</td>
+        <td><span class="code">Qualität ohne Kompromisse</span></td>
+      </tr>
+      <tr>
+        <td>Kontakt E-Mail</td>
+        <td>E-Mail-Adresse im Formular</td>
+        <td><span class="code">mailto:</span> suchen</td>
+      </tr>
+      <tr>
+        <td>Hero-Bild</td>
+        <td>Hintergrundbild</td>
+        <td>Datei: <span class="code">../assets/images/enjoy-buy/hero.jpg</span></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KAPITEL 7: RECHTLICHE SEITEN & EINSTELLUNGEN -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="chapter-header">
+    <div class="chapter-number">07</div>
+    <div class="chapter-title-block">
+      <div class="chapter-label">Kapitel Sieben</div>
+      <div class="chapter-title">Rechtliche Seiten<br>& Einstellungen</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Rechtliche Seiten — müssen aktuell gehalten werden</div>
+
+    <div class="page-entry">
+      <div class="page-entry-header">
+        <div class="page-entry-title">Impressum</div>
+        <div class="page-entry-file">pages/impressum.html</div>
+      </div>
+      <p>Pflichtangaben laut österreichischem/deutschem Recht. Diese Seite MUSS korrekt und aktuell sein!</p>
+      <table class="edit-table">
+        <tr><th>Was</th><th>Suche nach</th></tr>
+        <tr><td>Firmenname</td><td><span class="code">Segos Braumanufaktur GmbH</span></td></tr>
+        <tr><td>Adresse</td><td>Straße, PLZ, Ort</td></tr>
+        <tr><td>Geschäftsführer</td><td><span class="code">Geschäftsführer</span></td></tr>
+        <tr><td>UID-Nummer</td><td><span class="code">UID</span> oder <span class="code">ATU</span></td></tr>
+        <tr><td>E-Mail</td><td><span class="code">@segos</span> oder <span class="code">mailto:</span></td></tr>
+        <tr><td>Telefon</td><td><span class="code">Tel</span> oder <span class="code">+43</span></td></tr>
+      </table>
+    </div>
+
+    <div class="page-entry">
+      <div class="page-entry-header">
+        <div class="page-entry-title">Datenschutz</div>
+        <div class="page-entry-file">pages/datenschutz.html</div>
+      </div>
+      <p>Datenschutzerklärung gemäß DSGVO. Bei Änderungen am Kontaktformular oder neuen Tracking-Tools muss diese Seite angepasst werden.</p>
+      <div class="infobox warning">
+        <strong>Empfehlung</strong>
+        Die Datenschutzerklärung am besten von einem Rechtsanwalt oder über einen Generator (z.B. datenschutz.org) erstellen lassen.
+      </div>
+    </div>
+
+    <div class="page-entry">
+      <div class="page-entry-header">
+        <div class="page-entry-title">AGB</div>
+        <div class="page-entry-file">pages/agb.html</div>
+      </div>
+      <p>Allgemeine Geschäftsbedingungen für den Online-Shop. Müssen mit den Shopify-AGB übereinstimmen.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Konfigurationsdatei — Shop-URL ändern</div>
+    <div class="page-entry">
+      <div class="page-entry-header">
+        <div class="page-entry-title">Website-Konfiguration</div>
+        <div class="page-entry-file">assets/js/config.js</div>
+      </div>
+      <p>Zentrale Einstellungsdatei. Hier kann die Shop-URL geändert werden — gilt dann automatisch für die ganze Website.</p>
+      <div class="folder-tree" style="font-size: 13px; line-height: 2;">
+const CONFIG = {
+  <span class="folder">shopUrl</span>: <span style="color:#c2caae">'https://segos-sholto-shop.myshopify.com'</span>,
+  <span class="comment">← Hier die neue Shop-URL eintragen</span>
+  ageGate: { minAge: 16 }
+};
+      </div>
+      <table class="edit-table">
+        <tr><th>Einstellung</th><th>Was es macht</th><th>Wann ändern?</th></tr>
+        <tr>
+          <td><span class="code">shopUrl</span></td>
+          <td>Link auf den Online-Shop (alle "Zum Shop"-Buttons)</td>
+          <td>Wenn Shop-URL sich ändert</td>
+        </tr>
+        <tr>
+          <td><span class="code">minAge: 16</span></td>
+          <td>Mindestalter für Age-Gate (aktuell 16)</td>
+          <td>Wenn gesetzliche Anforderung sich ändert</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">SEO — Meta-Texte aktuell halten</div>
+    <p style="font-size:12px; color:var(--muted); margin-bottom:12px;">In jeder HTML-Datei gibt es ganz oben (im &lt;head&gt;-Bereich) Meta-Tags. Diese beeinflussen wie die Seite in Google und bei Social-Media-Links (z.B. WhatsApp) aussieht.</p>
+    <table class="edit-table">
+      <tr><th>Tag</th><th>Was es zeigt</th><th>Suche nach</th></tr>
+      <tr>
+        <td><span class="code">meta name="description"</span></td>
+        <td>Text unter dem Titel in Google</td>
+        <td><span class="code">content="Segos Braumanufaktur</span></td>
+      </tr>
+      <tr>
+        <td><span class="code">og:title</span></td>
+        <td>Titel beim Teilen in Social Media</td>
+        <td><span class="code">og:title</span></td>
+      </tr>
+      <tr>
+        <td><span class="code">og:description</span></td>
+        <td>Text beim Teilen in Social Media</td>
+        <td><span class="code">og:description</span></td>
+      </tr>
+      <tr>
+        <td><span class="code">og:image</span></td>
+        <td>Vorschaubild beim Teilen</td>
+        <td><span class="code">og:image</span> → Bild: <span class="code">assets/images/allgemein/og-image.jpg</span></td>
+      </tr>
+      <tr>
+        <td><span class="code">&lt;title&gt;</span></td>
+        <td>Text im Browser-Tab</td>
+        <td><span class="code">&lt;title&gt;</span>-Tag ganz oben</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KAPITEL 8: NEUE PRODUKTE HINZUFÜGEN -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="chapter-header">
+    <div class="chapter-number">08</div>
+    <div class="chapter-title-block">
+      <div class="chapter-label">Kapitel Acht</div>
+      <div class="chapter-title">Neues Produkt<br>hinzufügen</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">So fügst du ein neues Bier zur Sortimentsseite hinzu</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title">Produktbild vorbereiten</div>
+          <div class="step-desc">Produktfoto als PNG (transparenter Hintergrund) erstellen. Empfohlen: 400 × 600 Pixel. Datei benennen z.B. <span class="code">neues-bier-dose.png</span> und in <span class="code">assets/images/segos-sortiment/</span> (oder sholto-sortiment) kopieren.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title">Sortimentsseite öffnen</div>
+          <div class="step-desc"><span class="code">pages/segos-sortiment.html</span> in VS Code öffnen. Eine bestehende Produktkarte komplett kopieren (den gesamten Block von <span class="code">&lt;div class="...card..."&gt;</span> bis zum schließenden <span class="code">&lt;/div&gt;</span>).</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title">Kopie einfügen</div>
+          <div class="step-desc">Die kopierte Produktkarte direkt nach der letzten Karte einfügen. Danach die Texte (Name, Sorte, ABV, Beschreibung) und den Bildpfad (<span class="code">src="..."</span>) mit den neuen Daten befüllen.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <div class="step-title">Speichern & testen</div>
+          <div class="step-desc">Datei speichern, im Browser öffnen und prüfen ob die neue Karte korrekt angezeigt wird.</div>
+        </div>
+      </div>
+    </div>
+    <div class="infobox info">
+      <strong>Tipp: Produktkarten-Vorlage</strong>
+      Eine vollständige Produktkarte sieht in etwa so aus. Alles in GROSSBUCHSTABEN sind die Stellen die du ersetzen musst:
+    </div>
+    <div class="folder-tree" style="font-size: 11px; line-height: 1.9;">
+&lt;div class="bg-surface-container p-5 md:p-8 flex flex-col justify-between group"&gt;
+  &lt;div&gt;
+    &lt;h3 class="font-headline font-black text-2xl uppercase"&gt;<span style="color:#c2caae">PRODUKTNAME</span>&lt;/h3&gt;
+    &lt;p class="font-body text-primary/60 mt-2 uppercase text-[10px]"&gt;<span style="color:#c2caae">SORTE | ABV%</span>&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;img class="w-full h-48 object-contain my-8" src="<span style="color:#c2caae">../assets/images/segos-sortiment/DATEINAME.png</span>"/&gt;
+  &lt;button class="w-full bg-primary text-white py-4 font-label font-bold uppercase text-xs"&gt;In den Warenkorb&lt;/button&gt;
+&lt;/div&gt;
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KAPITEL 9: WEBSITE VERÖFFENTLICHEN (DEPLOY) -->
+<!-- ============================================================ -->
+<div class="page">
+  <div class="chapter-header">
+    <div class="chapter-number">09</div>
+    <div class="chapter-title-block">
+      <div class="chapter-label">Kapitel Neun</div>
+      <div class="chapter-title">Website veröffent-<br>lichen (Deploy)</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Workflow: Änderungen online stellen</div>
+    <div class="infobox info">
+      <strong>Wie die Website gehostet wird</strong>
+      Die Website liegt auf GitHub (Versionskontrolle) und wird von dort aus automatisch auf den Webserver (z.B. Netlify, Vercel oder GitHub Pages) veröffentlicht. Jede Änderung die du auf GitHub hochlädst, erscheint automatisch auf segos.beer.
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title">Änderungen lokal testen</div>
+          <div class="step-desc">Bevor du etwas online stellst: HTML-Datei im Browser öffnen (Doppelklick) und alles prüfen. Bilder sichtbar? Texte korrekt? Links funktionieren?</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title">GitHub Desktop öffnen</div>
+          <div class="step-desc">GitHub Desktop starten (kostenlos unter desktop.github.com). Das Repository "segos-sholto-website" auswählen. Alle geänderten Dateien werden links angezeigt.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title">Commit erstellen</div>
+          <div class="step-desc">Unten links einen kurzen Beschreibungstext eingeben, z.B. "Taproom Öffnungszeiten aktualisiert" oder "Neues Produktbild IPA". Dann "Commit to main" klicken.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <div class="step-title">Push to origin</div>
+          <div class="step-desc">Oben rechts "Push origin" klicken. Die Änderungen werden zu GitHub hochgeladen. Innerhalb von 1–2 Minuten ist die Website aktualisiert.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <div class="step-title">Live-Website prüfen</div>
+          <div class="step-desc">segos.beer im Browser öffnen (Ctrl+Shift+R für Hard-Reload) und prüfen ob die Änderungen sichtbar sind.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Häufige Probleme & Lösungen</div>
+    <table class="edit-table">
+      <tr>
+        <th>Problem</th>
+        <th>Mögliche Ursache</th>
+        <th>Lösung</th>
+      </tr>
+      <tr>
+        <td>Bild wird nicht angezeigt</td>
+        <td>Falscher Dateipfad oder falscher Dateiname</td>
+        <td>Pfad und Dateinamen genau prüfen (Groß-/Kleinschreibung!)</td>
+      </tr>
+      <tr>
+        <td>Seite sieht kaputt aus</td>
+        <td>Versehentlich ein HTML-Tag gelöscht</td>
+        <td>Änderung rückgängig machen (Ctrl+Z), nochmal versuchen</td>
+      </tr>
+      <tr>
+        <td>Änderung nicht sichtbar</td>
+        <td>Browser zeigt gecachte Version</td>
+        <td>Hard-Reload: Ctrl+Shift+R (Win) / Cmd+Shift+R (Mac)</td>
+      </tr>
+      <tr>
+        <td>Website lädt sehr langsam</td>
+        <td>Bilder zu groß (über 1 MB)</td>
+        <td>Bilder auf squoosh.app komprimieren (Ziel: unter 400 KB)</td>
+      </tr>
+      <tr>
+        <td>Age-Gate erscheint immer wieder</td>
+        <td>Browser-Cookies/Storage gelöscht</td>
+        <td>Normal — nach Bestätigung bleibt es für 7 Tage gespeichert</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Nützliche Tools (alle kostenlos)</div>
+    <div class="two-col">
+      <div class="card">
+        <div class="card-title">squoosh.app</div>
+        <p>Bilder komprimieren — einfach Bild hochladen, Qualität einstellen, herunterladen. Spart 70–80% Dateigröße ohne sichtbaren Qualitätsverlust.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">VS Code</div>
+        <p>Kostenloser Code-Editor von Microsoft. Perfekt für HTML-Bearbeitung. Zeigt Syntaxfehler sofort an.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">GitHub Desktop</div>
+        <p>Einfaches Programm zum Hochladen von Änderungen auf GitHub — ohne Kommandozeile.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">remove.bg</div>
+        <p>Hintergrund von Produktfotos automatisch entfernen (für PNG-Produktbilder mit transparentem Hintergrund). Kostenlose Version für einzelne Bilder.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- KAPITEL 10: SCHNELL-REFERENZ -->
+<!-- ============================================================ -->
+<div class="page" style="page-break-after: auto;">
+  <div class="chapter-header">
+    <div class="chapter-number">10</div>
+    <div class="chapter-title-block">
+      <div class="chapter-label">Kapitel Zehn</div>
+      <div class="chapter-title">Schnell-Referenz<br>Checkliste</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Checkliste: Neue Inhalte einpflegen</div>
+    <table class="edit-table">
+      <tr>
+        <th style="width:40px;">&#9744;</th>
+        <th>Aufgabe</th>
+        <th>Wo</th>
+      </tr>
+      <tr><td>&#9744;</td><td>Bild komprimiert? (max. 500 KB)</td><td>squoosh.app</td></tr>
+      <tr><td>&#9744;</td><td>Dateiname ohne Leerzeichen und Umlaute?</td><td>Dateiname</td></tr>
+      <tr><td>&#9744;</td><td>Bild in richtigen Ordner kopiert?</td><td><span class="code">assets/images/[seite]/</span></td></tr>
+      <tr><td>&#9744;</td><td>Bildpfad in HTML-Datei aktualisiert?</td><td>HTML-Datei</td></tr>
+      <tr><td>&#9744;</td><td>Texte korrekt? (kein Platzhaltertext?)</td><td>HTML-Datei</td></tr>
+      <tr><td>&#9744;</td><td>Lokal im Browser getestet?</td><td>Browser</td></tr>
+      <tr><td>&#9744;</td><td>Auf GitHub hochgeladen (Push)?</td><td>GitHub Desktop</td></tr>
+      <tr><td>&#9744;</td><td>Live auf segos.beer geprüft?</td><td>Browser</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Alle Seiten auf einem Blick</div>
+    <table class="edit-table">
+      <tr>
+        <th>Seite</th>
+        <th>Datei</th>
+        <th>Bild-Ordner</th>
+      </tr>
+      <tr><td>Startseite</td><td><span class="code">index.html</span></td><td><span class="code">assets/images/home/</span></td></tr>
+      <tr><td>Unsere Marken</td><td><span class="code">pages/unsere-marken.html</span></td><td><span class="code">assets/images/unsere-marken/</span></td></tr>
+      <tr><td>Segos Sortiment</td><td><span class="code">pages/segos-sortiment.html</span></td><td><span class="code">assets/images/segos-sortiment/</span></td></tr>
+      <tr><td>Sholto Sortiment</td><td><span class="code">pages/sholto-sortiment.html</span></td><td><span class="code">assets/images/sholto-sortiment/</span></td></tr>
+      <tr><td>Segos IPA</td><td><span class="code">pages/produkt-segos-ipa.html</span></td><td><span class="code">assets/images/produkt-segos-ipa/</span></td></tr>
+      <tr><td>Sholto Tutti Frutti</td><td><span class="code">pages/produkt-sholto-tutti.html</span></td><td><span class="code">assets/images/produkt-sholto-tutti/</span></td></tr>
+      <tr><td>Brauerei / Philosophie</td><td><span class="code">pages/philosophie.html</span></td><td><span class="code">assets/images/philosophie/</span></td></tr>
+      <tr><td>Taproom</td><td><span class="code">pages/taproom.html</span></td><td><span class="code">assets/images/taproom/</span></td></tr>
+      <tr><td>Enjoy & Buy local</td><td><span class="code">pages/enjoy-buy.html</span></td><td><span class="code">assets/images/enjoy-buy/</span></td></tr>
+      <tr><td>Impressum</td><td><span class="code">pages/impressum.html</span></td><td>—</td></tr>
+      <tr><td>Datenschutz</td><td><span class="code">pages/datenschutz.html</span></td><td>—</td></tr>
+      <tr><td>AGB</td><td><span class="code">pages/agb.html</span></td><td>—</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Pfad-Merkhilfe</div>
+    <div class="two-col">
+      <div class="card">
+        <div class="card-title">Bilder von index.html aus</div>
+        <p><span class="code">./assets/images/home/bild.jpg</span></p>
+        <p>Startet immer mit <strong>./</strong></p>
+      </div>
+      <div class="card">
+        <div class="card-title">Bilder von pages/*.html aus</div>
+        <p><span class="code">../assets/images/seite/bild.jpg</span></p>
+        <p>Startet immer mit <strong>../</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border); display:flex; justify-content:space-between; font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:0.15em;">
+    <span>Segos Braumanufaktur GmbH</span>
+    <span>Website Content Guide — Version 1.0</span>
+    <span>April 2026</span>
+  </div>
+</div>
+
+</body>
+</html>
