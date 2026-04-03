@@ -2,6 +2,7 @@ export const AgeGate = {
   confirmAge() {
     sessionStorage.setItem('segos_age_confirmed', 'true');
     document.getElementById('age-gate').style.display = 'none';
+    document.getElementById('main-content').style.display = 'block';
     document.getElementById('body-lock').style.overflow = 'auto';
   },
   rejectAge() {
@@ -11,6 +12,8 @@ export const AgeGate = {
     if (sessionStorage.getItem('segos_age_confirmed') !== 'true') {
       document.getElementById('age-gate').style.display = 'flex';
       document.getElementById('body-lock').style.overflow = 'hidden';
+    } else {
+      this.confirmAge();
     }
   }
 };
