@@ -64,6 +64,7 @@
         .custom-scrollbar::-webkit-scrollbar { width: 4px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: #f2ede2; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #3a412c; }
+        html { overflow-x: hidden; }
     </style>
     <title>Sholto Sortiment | Segos Braumanufaktur</title>
 </head>
@@ -124,17 +125,17 @@
 
 <main class="pt-24">
 <!-- Hero Section -->
-<section class="relative min-h-[921px] flex flex-col justify-end px-8 pb-16 md:px-20 md:pb-32">
+<section class="relative min-h-[100svh] flex flex-col justify-end px-5 pb-10 md:px-20 md:pb-32">
 <div class="absolute inset-0 z-0">
 <img class="w-full h-full object-cover grayscale opacity-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfJvaubfKpF1tUrJvi1NTfq9IAdrVhlH-6IaFNQyHnYRrglAgwOcU-ZOuCH5IoPbiR_koLUseZYnpgDnqu9YWX6HhgN1E94IqCs-DA7Jbwon4Mzl3QhyGkj524EumNe5DnzVO-m2Jx16luApaJQdpAVQtOTBEsj_ibJpuQ9JOYorsE4BNtY3tdSk60nW7tUBDTy1Py6z781iOSddigI8BMA-LvwM0ilW6iknnU7N1NujK6Ttxjk2WkndvSQhTco_X9PH54W71H9O5Z"/>
 </div>
 <div class="relative z-10 max-w-6xl">
-<span class="font-label uppercase tracking-[0.4em] text-primary mb-6 block font-semibold text-sm">Urbane Alchemie</span>
-<h1 class="font-headline text-7xl md:text-[12rem] font-bold uppercase tracking-tighter leading-[0.85] mb-8">
+<span class="font-label uppercase tracking-[0.4em] text-primary mb-4 md:mb-6 block font-semibold text-xs md:text-sm">Urbane Alchemie</span>
+<h1 class="font-headline text-4xl sm:text-5xl md:text-[12rem] font-bold uppercase tracking-tighter leading-[0.85] mb-5 md:mb-8">
         The New <br/> Standard <br/> of <span class="text-primary-container">Drinking</span>
 </h1>
-<div class="flex flex-col md:flex-row md:items-end gap-12 mt-12">
-<p class="max-w-md font-body text-lg leading-relaxed opacity-80">
+<div class="flex flex-col md:flex-row md:items-end gap-6 md:gap-12 mt-6 md:mt-12">
+<p class="max-w-md font-body text-sm md:text-lg leading-relaxed opacity-80">
             Präzision trifft auf Genuss. Wir haben den Brauprozess dekonstruiert, um alkoholfreie Perfektion für den urbanen Lifestyle zu schaffen. Keine Kompromisse. Nur Geschmack.
         </p>
 <div class="flex gap-4">
@@ -147,10 +148,10 @@
 </div>
 </section>
 <!-- Product Grid (Bento Style) -->
-<section class="bg-surface-container-low py-32 px-8 md:px-20">
+<section class="bg-surface-container-low py-16 px-4 md:py-32 md:px-20">
 <div class="max-w-[1920px] mx-auto">
-<div class="flex flex-col md:flex-row justify-between items-baseline mb-20 gap-8">
-<h2 class="font-headline text-5xl md:text-7xl font-bold uppercase tracking-tighter">Die Sholto Range</h2>
+<div class="flex flex-col md:flex-row justify-between items-baseline mb-10 md:mb-20 gap-4 md:gap-8">
+<h2 class="font-headline text-3xl md:text-7xl font-bold uppercase tracking-tighter">Die Sholto Range</h2>
 <div class="h-[2px] bg-primary grow mx-12 hidden md:block"></div>
 <span class="font-label uppercase tracking-widest opacity-60">Edition 2024 / Collection 01</span>
 </div>
@@ -160,9 +161,9 @@
 <div class="aspect-[16/9] overflow-hidden">
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1jfkml8juIuTxBjyRWgkK01ZVwivsRvc-NqNr0FuCzAqVw_cX5re83Q_7dgfh6iJh1O-W7iuhxlS3Oyi4PHX19sz_NEHP2ItZSwvz87Pt5Hjm4w275pLCTeN-aiaJgq5eEGco0JWxTttDLF0tDGVebEcLAYAvpDMKOx3PXruhksUuZttvYJ0EvLusSVPNbA0X1BYYPc6CGGBIjpErYhMXmyHtACxzL11er1ARGKryTxXg0h0G5Q_25w32lju4qD7zmHDO7hYSE8oK"/>
 </div>
-<div class="p-12 flex flex-col md:flex-row justify-between items-start gap-8">
+<div class="p-6 md:p-12 flex flex-col md:flex-row justify-between items-start gap-6 md:gap-8">
 <div>
-<h3 class="font-headline text-5xl font-bold uppercase mb-4">Tutti</h3>
+<h3 class="font-headline text-3xl md:text-5xl font-bold uppercase mb-3 md:mb-4">Tutti</h3>
 <div class="flex gap-3 mb-6">
 <span class="px-4 py-1 border border-primary/20 text-xs uppercase font-bold tracking-widest">Mindful</span>
 <span class="px-4 py-1 border border-primary/20 text-xs uppercase font-bold tracking-widest">Citrus</span>
@@ -177,20 +178,20 @@
 </div>
 </div>
 <!-- Side Stats -->
-<div class="md:col-span-4 bg-primary text-on-primary p-12 flex flex-col justify-between">
+<div class="md:col-span-4 bg-primary text-on-primary p-6 md:p-12 flex flex-col justify-between">
 <div>
-<span class="uppercase tracking-[0.3em] text-xs mb-12 block opacity-60">Brewing Standards</span>
-<div class="space-y-12">
+<span class="uppercase tracking-[0.3em] text-xs mb-8 md:mb-12 block opacity-60">Brewing Standards</span>
+<div class="space-y-8 md:space-y-12">
 <div>
-<h4 class="font-headline text-6xl font-bold">100%</h4>
+<h4 class="font-headline text-4xl md:text-6xl font-bold">100%</h4>
 <p class="uppercase text-xs tracking-widest opacity-60">Natürliche Zutaten</p>
 </div>
 <div>
-<h4 class="font-headline text-6xl font-bold">Low</h4>
+<h4 class="font-headline text-4xl md:text-6xl font-bold">Low</h4>
 <p class="uppercase text-xs tracking-widest opacity-60">Kaloriengehalt</p>
 </div>
 <div>
-<h4 class="font-headline text-6xl font-bold">Zero</h4>
+<h4 class="font-headline text-4xl md:text-6xl font-bold">Zero</h4>
 <p class="uppercase text-xs tracking-widest opacity-60">Kompromisse</p>
 </div>
 </div>
@@ -204,9 +205,9 @@
 <div class="aspect-square overflow-hidden">
 <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFMiagiPPATxwkItqoRKjIvNyJIbn-lVj24oxgxGthtxTkEoU4XSlMfg0GmmoWV360Xl_A_79gbkoK0VpWP8JLwYxrpiZkKQuZDY3vbKQnE5hUsBTEIsMpCVG_tzmlSTosz61NJBJ7MR71fqoz2toGKjwbc_aeoeujojNZ45WMHum4QqQTEK0AOE5yeMfevwcY1Fq5dzhJFwKpusrAwycFK6QMHdMAXO6w9AqmMrrSNeRAB1ot2z0nQ--yUhQ1On40uYa0xn9coRBX"/>
 </div>
-<div class="p-12">
-<div class="flex justify-between items-start mb-6">
-<h3 class="font-headline text-4xl font-bold uppercase">Haze</h3>
+<div class="p-6 md:p-12">
+<div class="flex justify-between items-start mb-4 md:mb-6">
+<h3 class="font-headline text-2xl md:text-4xl font-bold uppercase">Haze</h3>
 <span class="bg-primary-container text-on-primary px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em]">Urban Classic</span>
 </div>
 <div class="flex gap-3 mb-6 flex-wrap">
@@ -279,7 +280,7 @@ Details ansehen <span class="material-symbols-outlined">east</span>
 
 <footer class="bg-primary text-background mt-0 pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
-        <div class="grid md:grid-cols-4 gap-12 mb-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
             <div>
                 <h3 class="font-headline font-black text-xl tracking-tighter uppercase mb-4">Segos</h3>
                 <p class="font-body text-background/70 text-sm leading-relaxed">Premium-Braumanufaktur aus Vorarlberg. Handwerklich, authentisch, datenbasiert.</p>

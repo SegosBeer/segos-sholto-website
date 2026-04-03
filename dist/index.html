@@ -65,6 +65,7 @@
         .custom-scrollbar::-webkit-scrollbar { width: 4px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: #f2ede2; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #3a412c; }
+        html { overflow-x: hidden; }
     </style>
     <title>Home | Segos Braumanufaktur</title>
 </head>
@@ -132,19 +133,19 @@
 
 <main class="pt-24">
 <!-- Hero Section -->
-<section class="relative h-[921px] w-full overflow-hidden bg-primary">
+<section class="relative min-h-[100svh] md:h-[921px] w-full overflow-hidden bg-primary">
 <img class="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-1000" data-alt="dramatic wide angle shot of a modern industrial brewery with massive stainless steel tanks under moody low light and warm spotlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4qFI8e8YGsPiKH8_yugcAKDdXwbPJ2am3wkGp5Jr1Y4KIV2v-yZb-h7Jms4x8mKfa4kBEEhCTxWBjx1sKm3aixFeY7QFuL4dSgdEEb9zSSAKImIe0qJYvspfQt8XBp8wwg53zw46Mq_A2GK9rOS_kA9XQ4-v0wbV3yPp9rrdlzfCsge5qmtVvLGyfBD0b66_A6GSDb251zwufgjw8yhJtSYrxSfsv5PsbAjZjhldSsbb_ck9u7Kn_nik3lZUOVR5w9zZyvWQRTgv5"/>
-<div class="absolute inset-0 flex flex-col justify-end p-12 md:p-24">
+<div class="absolute inset-0 flex flex-col justify-end p-6 md:p-24">
 <div class="max-w-4xl">
-<span class="inline-block bg-primary-container text-on-primary-container px-3 py-1 font-label text-[10px] font-bold uppercase tracking-[0.2em] mb-6">Established 2024</span>
-<h1 class="font-headline font-black text-6xl md:text-[8rem] leading-[0.85] text-background tracking-tighter uppercase mb-8">
+<span class="inline-block bg-primary-container text-on-primary-container px-3 py-1 font-label text-[10px] font-bold uppercase tracking-[0.2em] mb-4 md:mb-6">Established 2024</span>
+<h1 class="font-headline font-black text-4xl sm:text-5xl md:text-[8rem] leading-[0.9] md:leading-[0.85] text-background tracking-tighter uppercase mb-6 md:mb-8">
                     The Science <br/>of Soul.
                 </h1>
-<div class="flex flex-col md:flex-row items-start md:items-center gap-8">
-<p class="font-body text-background/80 max-w-md text-lg leading-relaxed">
+<div class="flex flex-col md:flex-row items-start md:items-center gap-5 md:gap-8">
+<p class="font-body text-background/80 max-w-md text-sm md:text-lg leading-relaxed">
                         Handwerklich perfektionierte Braukunst trifft auf kompromisslose Industrielle Präzision. Wir brauen nicht einfach Bier, wir schmieden flüssiges Gold.
                     </p>
-<a href="https://segos-sholto-shop.myshopify.com" target="_blank" class="group flex items-center gap-4 bg-background text-primary px-10 py-6 font-headline font-black uppercase text-xl transition-all hover:-translate-y-1">
+<a href="https://segos-sholto-shop.myshopify.com" target="_blank" class="group flex items-center gap-3 bg-background text-primary px-6 py-4 md:px-10 md:py-6 font-headline font-black uppercase text-sm md:text-xl transition-all hover:-translate-y-1 whitespace-nowrap">
                         Jetzt Entdecken
                         <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
 </a>
@@ -155,10 +156,10 @@
 <!-- Identity Split Section -->
 <section class="grid grid-cols-1 md:grid-cols-2">
 <!-- Brand Segos -->
-<div class="bg-surface-container-low p-12 md:p-24 flex flex-col justify-between aspect-square md:aspect-auto">
+<div class="bg-surface-container-low p-6 md:p-24 flex flex-col justify-between">
 <div>
-<h2 class="font-headline font-black text-5xl uppercase tracking-tighter text-primary mb-6">Segos</h2>
-<p class="font-body text-primary/70 text-lg leading-relaxed mb-12">
+<h2 class="font-headline font-black text-4xl md:text-5xl uppercase tracking-tighter text-primary mb-4 md:mb-6">Segos</h2>
+<p class="font-body text-primary/70 text-base leading-relaxed mb-6 md:mb-12">
                     Unsere Heritage-Linie. Klassische Rezepte, neu interpretiert für die moderne Gaumenwelt. Dunkle Malze, tiefe Aromen und die Ruhe eines perfekt gereiften Lagers.
                 </p>
 </div>
@@ -170,10 +171,10 @@
 </div>
 </div>
 <!-- Brand Sholto -->
-<div class="bg-primary p-12 md:p-24 text-background flex flex-col justify-between aspect-square md:aspect-auto">
+<div class="bg-primary p-6 md:p-24 text-background flex flex-col justify-between">
 <div>
-<h2 class="font-headline font-black text-5xl uppercase tracking-tighter text-surface-container-highest mb-6">Sholto</h2>
-<p class="font-body text-background/70 text-lg leading-relaxed mb-12">
+<h2 class="font-headline font-black text-4xl md:text-5xl uppercase tracking-tighter text-surface-container-highest mb-4 md:mb-6">Sholto</h2>
+<p class="font-body text-background/70 text-base leading-relaxed mb-6 md:mb-12">
                     Das Laboratorium. Hier bricht Sholto mit Konventionen. Experimentelle IPAs, fassgereifte Sours und Hopfenkombinationen, die die Grenzen des Möglichen verschieben.
                 </p>
 </div>
@@ -186,20 +187,20 @@
 </div>
 </section>
 <!-- Featured Products - Industrial Bento -->
-<section class="py-24 px-8 md:px-24 bg-background">
-<div class="mb-20 flex flex-col md:flex-row justify-between items-end gap-6 border-b border-outline-variant/20 pb-8">
+<section class="py-12 px-4 md:py-24 md:px-24 bg-background">
+<div class="mb-10 md:mb-20 flex flex-col md:flex-row justify-between items-start md:items-end gap-4 md:gap-6 border-b border-outline-variant/20 pb-6 md:pb-8">
 <div>
 <span class="font-label text-[10px] font-bold uppercase tracking-[0.4em] text-primary/40 mb-2 block">Stock Update</span>
-<h2 class="font-headline font-black text-5xl uppercase tracking-tighter">Current Batch</h2>
+<h2 class="font-headline font-black text-3xl md:text-5xl uppercase tracking-tighter">Current Batch</h2>
 </div>
 <a class="font-label font-bold uppercase text-sm tracking-widest text-primary flex items-center gap-2 hover:gap-4 transition-all underline underline-offset-8" href="/pages/segos-sortiment.html">Alle Sorten ansehen</a>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-4 gap-1">
 <!-- Product 1 -->
-<div class="md:col-span-2 bg-surface-container-low p-8 group relative flex flex-col justify-between overflow-hidden">
+<div class="md:col-span-2 bg-surface-container-low p-5 md:p-8 group relative flex flex-col justify-between overflow-hidden">
 <div class="z-10">
 <span class="font-label text-[10px] font-bold uppercase tracking-widest bg-primary text-white px-2 py-1">Limited Release</span>
-<h3 class="font-headline font-black text-4xl uppercase mt-4">Midnight Machinist</h3>
+<h3 class="font-headline font-black text-2xl md:text-4xl uppercase mt-4">Midnight Machinist</h3>
 <p class="font-body text-primary/60 mt-2 uppercase text-xs">Imperial Stout | 9.2% ABV</p>
 </div>
 <img class="w-64 h-auto self-end transform group-hover:scale-105 group-hover:-rotate-3 transition-transform duration-500 mt-12" data-alt="minimalist craft beer can with matte black finish and metallic copper typography standing on a reflective surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKT214au_kRjfCoJSj3uLScNdacKs39JwryuIZXpMn8-5-5Jk-ldJbUXEPEbM01C-OXYQj6vkhFWQNhRAKRXLv3LD4eyUmNksSpXso-3rFUzw1nwV46tlpiEDq9lk3TGp4RQzLCTwWieIM5nygMHOGLiQWnO166rqKhGMjog2encPyDXHuNnl6I_nsbyOikaM-9K7qT4tc-nqN6kmV8YjVn3C97NnZd4_Hu4e2XU-zf1j3UX-h_IVrzbkYNTUqpIMCRZPdil1STHJa"/>
@@ -220,18 +221,18 @@
 </div>
 </div>
 <!-- Product 2 -->
-<div class="bg-surface-container p-8 flex flex-col justify-between group">
+<div class="bg-surface-container p-5 md:p-8 flex flex-col justify-between group">
 <div>
-<h3 class="font-headline font-black text-3xl uppercase">Steel Haze</h3>
+<h3 class="font-headline font-black text-2xl md:text-3xl uppercase">Steel Haze</h3>
 <p class="font-body text-primary/60 mt-2 uppercase text-[10px]">New England IPA | 6.5%</p>
 </div>
 <img class="w-full h-48 object-contain my-8 group-hover:-translate-y-2 transition-transform" data-alt="cold craft beer can with condensation drops on a bright neon abstract label design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp6hxJICHKOqjoknw-L8X5M6rJGsq25r30KD6BR2BkZXtc53WreCnd15hKT2vKpEGCL32k18_-rAhrhexPVZaFW7YO8wTPaxSGxRr9jqWEgWyTlgImK7zl41VKNghF6BF53Y9G77XkTQBdmMSd1qvcoAC7rw4OUUW9KM5Mrv_EK3EprkMT9rMr6KjZsi8YE3d3ssnXd6BqzV1bfl_cRfOJmDwDuylwabqsPYWgTu7ThY1VfiYDEbmJBG8zeOZD_2vtQ77_T7EzERkF"/>
 <button class="w-full bg-primary text-white py-4 font-label font-bold uppercase text-xs tracking-widest">In den Warenkorb</button>
 </div>
 <!-- Product 3 -->
-<div class="bg-surface-container-highest p-8 flex flex-col justify-between group">
+<div class="bg-surface-container-highest p-5 md:p-8 flex flex-col justify-between group">
 <div>
-<h3 class="font-headline font-black text-3xl uppercase">Oxide Pale</h3>
+<h3 class="font-headline font-black text-2xl md:text-3xl uppercase">Oxide Pale</h3>
 <p class="font-body text-primary/60 mt-2 uppercase text-[10px]">American Pale Ale | 5.4%</p>
 </div>
 <img class="w-full h-48 object-contain my-8 group-hover:-translate-y-2 transition-transform" data-alt="industrial metal shelves holding rows of identical beer bottles with clean graphic labels in a minimalist cellar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-bgZNyArokhCuXZai0iOU9ePQbJu1bbNQL-a2L0Cpc7ywovqsCzMpo9tAaqJJnGzvFnENelytk70fkJ8Li8QBJBUn9USXuQWWKdR5AvXEm_6CD6JCkjzHIX1wBgEx2SHbDjXV-IcbV9s1c_Ien6CFChQUSPFW4BdM2NBjn80eSl6SEF5mlQJVqSjRJaHnbwswwYNH8XO7_CRQ2siIYZ3I4Eoog7JQZxqbYpNMdDyesqH92iBewra4HLR_l8NPnbsDcrUjXC-TKusE"/>
@@ -240,14 +241,14 @@
 </div>
 </section>
 <!-- Industrial CTA Banner -->
-<section class="bg-primary py-24 px-12 md:px-24 text-center overflow-hidden relative">
+<section class="bg-primary py-16 px-6 md:py-24 md:px-24 text-center overflow-hidden relative">
 <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-5">
-<span class="font-headline font-black text-[25rem] uppercase tracking-tighter leading-none">SEGO</span>
+<span class="font-headline font-black text-[10rem] md:text-[25rem] uppercase tracking-tighter leading-none">SEGO</span>
 </div>
 <div class="relative z-10 max-w-2xl mx-auto">
-<h2 class="font-headline font-black text-5xl md:text-7xl uppercase text-background mb-8 leading-[0.9]">Bereit für den ersten Schluck?</h2>
-<p class="font-body text-background/60 mb-12 text-lg">Direkt aus der Braumanufaktur zu dir nach Hause. Frischer wird es nicht.</p>
-<a href="https://segos-sholto-shop.myshopify.com" target="_blank" class="inline-block bg-background text-primary px-16 py-6 font-headline font-black text-2xl uppercase tracking-tighter transition-all hover:scale-105 active:scale-95 shadow-2xl">
+<h2 class="font-headline font-black text-3xl md:text-7xl uppercase text-background mb-6 md:mb-8 leading-[0.9]">Bereit für den ersten Schluck?</h2>
+<p class="font-body text-background/60 mb-8 md:mb-12 text-base md:text-lg">Direkt aus der Braumanufaktur zu dir nach Hause. Frischer wird es nicht.</p>
+<a href="https://segos-sholto-shop.myshopify.com" target="_blank" class="inline-block bg-background text-primary px-8 py-4 md:px-16 md:py-6 font-headline font-black text-lg md:text-2xl uppercase tracking-tighter transition-all hover:scale-105 active:scale-95 shadow-2xl">
                     Zum Onlineshop
                 </a>
 </div>
@@ -258,7 +259,7 @@
 
 <footer class="bg-primary text-background mt-0 pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
-        <div class="grid md:grid-cols-4 gap-12 mb-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
             <!-- Brand -->
             <div>
                 <h3 class="font-headline font-black text-xl tracking-tighter uppercase mb-4">Segos</h3>

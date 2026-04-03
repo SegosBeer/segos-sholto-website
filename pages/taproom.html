@@ -65,6 +65,7 @@
         .custom-scrollbar::-webkit-scrollbar { width: 4px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: #f2ede2; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #3a412c; }
+        html { overflow-x: hidden; }
     </style>
     <title>Taproom | Segos Braumanufaktur</title>
 </head>
@@ -125,14 +126,14 @@
 
 <main class="pt-24">
 <!-- Hero: Editorial Anchor -->
-<section class="relative px-8 md:px-16 pt-20 pb-32 overflow-hidden bg-surface">
-<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-end">
+<section class="relative px-5 md:px-16 pt-12 pb-16 md:pt-20 md:pb-32 overflow-hidden bg-surface">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-end">
 <div class="md:col-span-8 z-10">
-<span class="uppercase tracking-[0.3em] text-sm font-label text-primary-container mb-6 block">Industrial Alchemy</span>
-<h1 class="font-headline text-7xl md:text-9xl font-black tracking-tighter leading-[0.85] text-primary mb-12">
+<span class="uppercase tracking-[0.3em] text-xs md:text-sm font-label text-primary-container mb-4 md:mb-6 block">Industrial Alchemy</span>
+<h1 class="font-headline text-5xl sm:text-6xl md:text-9xl font-black tracking-tighter leading-[0.85] text-primary mb-6 md:mb-12">
                     TAPROOM <br/> <span class="text-outline-thin text-primary">EXPERIENCE</span>
 </h1>
-<p class="text-xl max-w-xl text-primary/80 leading-relaxed">
+<p class="text-base md:text-xl max-w-xl text-primary/80 leading-relaxed">
                     Besuchen Sie das Herz unserer Manufaktur. Wo Präzision auf Leidenschaft trifft und frisches Bier direkt aus dem Lagertank in Ihr Glas fließt.
                 </p>
 </div>
@@ -144,31 +145,31 @@
 </div>
 </section>
 <!-- Bento Grid: Opening & Location -->
-<section class="bg-surface-container-low px-8 md:px-16 py-32">
+<section class="bg-surface-container-low px-4 md:px-16 py-16 md:py-32">
 <div class="max-w-7xl mx-auto">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-1 bg-primary p-1">
-<div class="md:col-span-5 bg-surface p-12">
-<h3 class="font-headline text-3xl font-bold uppercase tracking-tight mb-12 border-b border-outline-variant/30 pb-4">Opening Hours</h3>
-<div class="space-y-6">
-<div class="flex justify-between items-center group">
-<span class="font-label uppercase tracking-widest text-sm text-secondary">Montag - Dienstag</span>
-<span class="font-headline font-semibold">Geschlossen</span>
+<div class="md:col-span-5 bg-surface p-6 md:p-12">
+<h3 class="font-headline text-2xl md:text-3xl font-bold uppercase tracking-tight mb-6 md:mb-12 border-b border-outline-variant/30 pb-4">Opening Hours</h3>
+<div class="space-y-4 md:space-y-6">
+<div class="flex justify-between items-center gap-3 group">
+<span class="font-label uppercase tracking-widest text-xs md:text-sm text-secondary">Mo — Di</span>
+<span class="font-headline font-semibold text-sm md:text-base">Geschlossen</span>
 </div>
-<div class="flex justify-between items-center group">
-<span class="font-label uppercase tracking-widest text-sm text-secondary">Mittwoch - Donnerstag</span>
-<span class="font-headline font-semibold">16:00 — 22:00</span>
+<div class="flex justify-between items-center gap-3 group">
+<span class="font-label uppercase tracking-widest text-xs md:text-sm text-secondary">Mi — Do</span>
+<span class="font-headline font-semibold text-sm md:text-base">16:00 — 22:00</span>
 </div>
-<div class="flex justify-between items-center group">
-<span class="font-label uppercase tracking-widest text-sm text-secondary">Freitag</span>
-<span class="font-headline font-semibold">16:00 — 00:00</span>
+<div class="flex justify-between items-center gap-3 group">
+<span class="font-label uppercase tracking-widest text-xs md:text-sm text-secondary">Freitag</span>
+<span class="font-headline font-semibold text-sm md:text-base">16:00 — 00:00</span>
 </div>
-<div class="flex justify-between items-center group">
-<span class="font-label uppercase tracking-widest text-sm text-secondary">Samstag</span>
-<span class="font-headline font-semibold">12:00 — 00:00</span>
+<div class="flex justify-between items-center gap-3 group">
+<span class="font-label uppercase tracking-widest text-xs md:text-sm text-secondary">Samstag</span>
+<span class="font-headline font-semibold text-sm md:text-base">12:00 — 00:00</span>
 </div>
-<div class="flex justify-between items-center group">
-<span class="font-label uppercase tracking-widest text-sm text-secondary">Sonntag</span>
-<span class="font-headline font-semibold">12:00 — 20:00</span>
+<div class="flex justify-between items-center gap-3 group">
+<span class="font-label uppercase tracking-widest text-xs md:text-sm text-secondary">Sonntag</span>
+<span class="font-headline font-semibold text-sm md:text-base">12:00 — 20:00</span>
 </div>
 </div>
 </div>
@@ -187,11 +188,11 @@
 </div>
 </section>
 <!-- Brewery Tours: Technical/Data Sheet Style -->
-<section class="bg-surface px-8 md:px-16 py-32">
-<div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-start">
+<section class="bg-surface px-4 md:px-16 py-16 md:py-32">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 md:gap-16 items-start">
 <div class="w-full md:w-1/2">
-<h2 class="font-headline text-5xl font-black tracking-tighter uppercase mb-8 leading-none">Brewery<br/>Tours &amp;<br/>Tastings</h2>
-<p class="text-lg text-secondary mb-12 max-w-md">Erhalten Sie exklusive Einblicke in unsere Produktion. Vom Schroten des Malzes bis zur Abfüllung – wir zeigen Ihnen jeden Schritt unserer Alchemie.</p>
+<h2 class="font-headline text-4xl md:text-5xl font-black tracking-tighter uppercase mb-6 md:mb-8 leading-none">Brewery<br/>Tours &amp;<br/>Tastings</h2>
+<p class="text-base md:text-lg text-secondary mb-8 md:mb-12 max-w-md">Erhalten Sie exklusive Einblicke in unsere Produktion. Vom Schroten des Malzes bis zur Abfüllung – wir zeigen Ihnen jeden Schritt unserer Alchemie.</p>
 <div class="bg-surface-container-highest p-8 space-y-8">
 <div class="flex items-start gap-4">
 <span class="material-symbols-outlined text-primary pt-1">precision_manufacturing</span>
@@ -225,10 +226,10 @@
 </div>
 </section>
 <!-- Digital Menu: Minimalist Grid -->
-<section class="bg-primary text-on-primary px-8 md:px-16 py-32 overflow-hidden">
+<section class="bg-primary text-on-primary px-4 md:px-16 py-16 md:py-32 overflow-hidden">
 <div class="max-w-7xl mx-auto">
-<div class="flex justify-between items-baseline mb-20 border-b border-on-primary/10 pb-8">
-<h2 class="font-headline text-4xl font-bold uppercase tracking-tighter">Current Tap List</h2>
+<div class="flex justify-between items-baseline mb-10 md:mb-20 border-b border-on-primary/10 pb-6 md:pb-8">
+<h2 class="font-headline text-2xl md:text-4xl font-bold uppercase tracking-tighter">Current Tap List</h2>
 <span class="font-label text-xs uppercase tracking-widest opacity-60">Updated: Nov 2024</span>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-20 gap-y-16">
@@ -295,8 +296,8 @@
 <p class="text-sm opacity-50 font-body leading-relaxed italic">Frisch gebacken mit Malzrückständen aus dem Sudhaus. Serviert mit hausgemachtem Obazda.</p>
 </div>
 </div>
-<div class="mt-24 text-center">
-<p class="font-headline font-black text-6xl md:text-8xl opacity-10 tracking-tighter uppercase select-none">Drink Responsibility</p>
+<div class="mt-12 md:mt-24 text-center overflow-hidden">
+<p class="font-headline font-black text-3xl md:text-8xl opacity-10 tracking-tighter uppercase select-none">Drink Responsibility</p>
 </div>
 </div>
 </section>
@@ -306,7 +307,7 @@
 
 <footer class="bg-primary text-background mt-0 pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
-        <div class="grid md:grid-cols-4 gap-12 mb-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
             <div>
                 <h3 class="font-headline font-black text-xl tracking-tighter uppercase mb-4">Segos</h3>
                 <p class="font-body text-background/70 text-sm leading-relaxed">Premium-Braumanufaktur aus Vorarlberg. Handwerklich, authentisch, datenbasiert.</p>

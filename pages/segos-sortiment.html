@@ -64,6 +64,7 @@
         .custom-scrollbar::-webkit-scrollbar { width: 4px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: #f2ede2; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #3a412c; }
+        html { overflow-x: hidden; }
     </style>
     <title>Segos Sortiment | Segos Braumanufaktur</title>
 </head>
@@ -124,17 +125,17 @@
 
 <main class="pt-24">
 <!-- Hero Section -->
-<section class="relative min-h-[716px] flex items-center px-8 overflow-hidden bg-surface-container-low">
+<section class="relative min-h-[100svh] md:min-h-[716px] flex items-center px-4 md:px-8 overflow-hidden bg-surface-container-low">
 <div class="absolute inset-0 z-0 opacity-10">
 <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
 </div>
-<div class="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 z-10">
+<div class="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 z-10 py-16 md:py-0">
 <div class="lg:col-span-8">
-<span class="inline-block bg-primary text-on-primary px-4 py-1 font-label text-xs uppercase tracking-[0.2em] mb-6">Industrial Alchemist</span>
-<h1 class="text-7xl md:text-9xl font-headline font-black text-primary leading-[0.85] tracking-tighter mb-8">
+<span class="inline-block bg-primary text-on-primary px-4 py-1 font-label text-xs uppercase tracking-[0.2em] mb-4 md:mb-6">Industrial Alchemist</span>
+<h1 class="text-4xl sm:text-5xl md:text-9xl font-headline font-black text-primary leading-[0.85] tracking-tighter mb-6 md:mb-8">
                 SEGOS<br/>SORTIMENT
             </h1>
-<p class="max-w-xl text-xl text-on-surface-variant font-body leading-relaxed">
+<p class="max-w-xl text-base md:text-xl text-on-surface-variant font-body leading-relaxed">
             Präzision in jedem Milliliter. Unsere Brauerei verbindet modernste Prozesstechnik mit der unbändigen Seele handwerklicher Alchemie. Keine Kompromisse, nur reine Qualität.
         </p>
 </div>
@@ -145,16 +146,16 @@
 </div>
 </section>
 <!-- Product Grid -->
-<section class="py-24 px-8 bg-surface">
+<section class="py-12 px-4 md:py-24 md:px-8 bg-surface">
 <div class="container mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border-collapse">
+<div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-0 border-collapse">
 <!-- Helles -->
 <div class="group border border-outline-variant/20 hover:bg-surface-container-low transition-all duration-500">
 <div class="aspect-[3/4] relative overflow-hidden bg-surface-container-high">
 <img alt="Segos Helles" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzrLf08sZ_9C-i5Vm4AqClrtheynHI6RK3YlxC7rLafvcip7C_pqfwCX3y5YdsJk_eqq1M7cVzaxvVtIH1TK9q8UKdxY0IxzxbWdykEWWuNEIMxa0YhvA5nxFQMw-rYItfol_x1cA5dcE73gA0FR_0oFTSHTUK3RTWtsV39u2jr8HV3zYylLnGGLgcBvUMvzo5rW4owR22sM35AJ4WiTSBBtnt1Ij4DQtNFueMFzAJO90FuMXcJwnTQMRfJq6qlYNnOMa0r9UWylVD"/>
 </div>
-<div class="p-8">
-<h3 class="text-3xl font-headline font-black uppercase text-primary mb-2">Helles</h3>
+<div class="p-4 md:p-8">
+<h3 class="text-xl md:text-3xl font-headline font-black uppercase text-primary mb-2">Helles</h3>
 <p class="text-sm font-label text-on-surface-variant mb-8 uppercase tracking-widest">Das Fundament</p>
 <div class="grid grid-cols-3 gap-2 p-4 bg-surface-container-highest mb-8">
 <div class="text-center">
@@ -178,8 +179,8 @@
 <div class="aspect-[3/4] relative overflow-hidden bg-surface-container-high">
 <img alt="Segos Dunkel" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq4IIETnzO_P65zEU1-ubYJOtWtHLXDa8nXB_MaYlPew38MupwwcGw4zOg2FYTrBv6R8qaxBQEXgVBaPjRg2mwrEMQwwWSDDlGnSfK9JvM8WC2xNjebzMAzG_YMDTIIWYmN88fwBsSnj0JwARGWJ0k5CurEk9kjhiar04145D-5Y_GvRcpD7_3Ej02cpLxaHhXYBbYbtUhtXQk8nAcmYlE4vResnCQcAu4VW1s_MBBE3Mb3jz7skYMkIZtSQEjWp-bKf68UuEZNrmR"/>
 </div>
-<div class="p-8">
-<h3 class="text-3xl font-headline font-black uppercase text-primary mb-2">Dunkel</h3>
+<div class="p-4 md:p-8">
+<h3 class="text-xl md:text-3xl font-headline font-black uppercase text-primary mb-2">Dunkel</h3>
 <p class="text-sm font-label text-on-surface-variant mb-8 uppercase tracking-widest">Die Röstung</p>
 <div class="grid grid-cols-3 gap-2 p-4 bg-surface-container-highest mb-8">
 <div class="text-center">
@@ -203,8 +204,8 @@
 <div class="aspect-[3/4] relative overflow-hidden bg-surface-container-high">
 <img alt="Segos IPA" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgUmJeleEXwJksYAWKCkuIFoUd8kuRvDFQ4a5xrTSCOnm5iwO1o1pGl4F0idXp9UphEtwiwxrl_o6NTjH8HJUCov3Kphzzs0RUpIqTWoiYCEvaGmI6wxk540pmR1_FioOp8DucfJEVhSZiqif_O_2oLWDN3zY6gstDXsEj_8-N3fXlJ1nPkAJYmlXlpwGwvrWwzD1Dr2UUQaOnrQIBo9wQHSI0531Js_sHveI8ijc3z3JP-tuJwauP-TXQvm68S3RQILxmD7um2rb3"/>
 </div>
-<div class="p-8">
-<h3 class="text-3xl font-headline font-black uppercase text-primary mb-2">IPA</h3>
+<div class="p-4 md:p-8">
+<h3 class="text-xl md:text-3xl font-headline font-black uppercase text-primary mb-2">IPA</h3>
 <p class="text-sm font-label text-on-surface-variant mb-8 uppercase tracking-widest">Das Experiment</p>
 <div class="grid grid-cols-3 gap-2 p-4 bg-surface-container-highest mb-8">
 <div class="text-center">
@@ -228,8 +229,8 @@
 <div class="aspect-[3/4] relative overflow-hidden bg-surface-container-high">
 <img alt="Segos Hopwater" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAucdfJYEZe8ACgNgwVnygDvLzpeo01gTrdyGRkTcZ7Cy6RhT0LVrEvQUKpq2KCw4LMrDXZV9OzwfIW9BKGTEpAa7weHZzoMr8MX3m7DTCdlyHcaRQUBcY3QYilwPjjsPJqvT-H1sJi9018rqRQtPx8UR81Ps3Qm5XH9whJnFPUNmSnaDyVtM3w46-h-BCPbw1Y-00f_-ywsSJuKtUq25SSWSvKK0NgMQjeSHbiF7b3WP3RsaRtccG1uiFURl0GkBAlbV6fBOEkJPeZ"/>
 </div>
-<div class="p-8">
-<h3 class="text-3xl font-headline font-black uppercase text-primary mb-2">Hopwater</h3>
+<div class="p-4 md:p-8">
+<h3 class="text-xl md:text-3xl font-headline font-black uppercase text-primary mb-2">Hopwater</h3>
 <p class="text-sm font-label text-on-surface-variant mb-8 uppercase tracking-widest">Die Essenz</p>
 <div class="grid grid-cols-3 gap-2 p-4 bg-surface-container-highest mb-8">
 <div class="text-center">
@@ -279,7 +280,7 @@
 
 <footer class="bg-primary text-background mt-0 pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
-        <div class="grid md:grid-cols-4 gap-12 mb-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
             <div>
                 <h3 class="font-headline font-black text-xl tracking-tighter uppercase mb-4">Segos</h3>
                 <p class="font-body text-background/70 text-sm leading-relaxed">Premium-Braumanufaktur aus Vorarlberg. Handwerklich, authentisch, datenbasiert.</p>
