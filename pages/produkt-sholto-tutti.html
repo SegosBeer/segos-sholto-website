@@ -124,7 +124,7 @@
 
 <!-- Hero Section -->
 <section class="min-h-screen flex flex-col md:flex-row items-center px-10 gap-16 mb-20">
-    <div class="w-full md:w-1/2 flex flex-col justify-center">
+    <div class="w-full md:w-1/2 flex flex-col justify-center order-2 md:order-1">
         <span class="font-label text-xs uppercase tracking-[0.4em] mb-4 text-primary opacity-60">Handcrafted Alchemy</span>
         <h1 class="font-headline text-7xl md:text-[9rem] font-bold leading-[0.85] tracking-tighter text-primary mb-10">
             FRUCHTIG,<br/>HOPFIG,<br/>BIERIG.
@@ -154,9 +154,9 @@
             </a>
         </div>
     </div>
-    <div class="w-full md:w-1/2 relative">
+    <div class="w-full md:w-1/2 relative order-1 md:order-2">
         <div class="absolute -right-20 -top-20 w-96 h-96 bg-primary-container opacity-5 blur-[120px] rounded-full"></div>
-        <img alt="Sholto Tutti non-alcoholic beer can" class="w-full h-[819px] object-contain transform hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5DYmcHR1fU_hy7-TbfXt5seQBWCUcGKrMfP-gdVsW3xNjNLxG18ss2TRZ0dDYEPe-5EmUnoOoUm7YQh_FVs28n422lK6jnI7MV4h7GiMaL0nARhHhMPpsXlnfiiQimJfeIWSBduEOCeFtoyZqA311AWfdLbmosmQ4VPwC1h8rIfP86T7XuIRcMd3Vxn51RVln8NnKic4X6Vp0_3IzCLbbfEGwMvx-sDip7O7YoPcylHTDhMRnX1ioKJEmzpVXWnSg4dxXJM7BP_7K"/>
+        <img alt="Sholto Tutti Dose" class="w-full h-[819px] object-contain transform hover:scale-105 transition-transform duration-700" src="../assets/images/produkt-sholto-tutti/produkt-haupt.png"/>
     </div>
 </section>
 
@@ -203,6 +203,50 @@
     </div>
 </section>
 
+<!-- Das Etikett — Label Design Showcase (Tutti) -->
+<section class="overflow-hidden" style="background:#f0e650;">
+    <!-- Pattern band: drei Zonen des Tutti-Etiketts als CSS -->
+    <div class="grid grid-cols-1 md:grid-cols-3" style="min-height:420px;">
+
+        <!-- Zone 1: Pfeil-/Dreieck-Motiv (oberes Etikett-Band) -->
+        <div class="relative overflow-hidden" style="min-height:210px;background:#f0e650;">
+            <svg class="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                    <pattern id="tutti-tri" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+                        <polygon points="0,0 40,20 0,40" fill="#e64a19"/>
+                        <polygon points="40,0 80,20 40,40" fill="#c0392b"/>
+                        <polygon points="0,40 40,60 0,80" fill="#c0392b"/>
+                        <polygon points="40,40 80,60 40,80" fill="#e64a19"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#tutti-tri)"/>
+            </svg>
+        </div>
+
+        <!-- Zone 2: Checkerboard (mittleres Etikett-Band) -->
+        <div style="min-height:210px;background:repeating-conic-gradient(#2e7d32 0% 25%,#c62828 0% 50%) 0 0/50px 50px;"></div>
+
+        <!-- Zone 3: Orangener Halbbogen (unteres Etikett-Band) -->
+        <div class="relative overflow-hidden" style="min-height:210px;background:#f0e650;">
+            <div style="position:absolute;left:-20%;right:-20%;bottom:-30%;height:180%;background:#e64a19;border-radius:50%;"></div>
+        </div>
+
+    </div>
+    <!-- Brand-Text + Beschreibung -->
+    <div class="px-10 py-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-end">
+        <div>
+            <span class="font-label text-xs uppercase tracking-[0.5em] block mb-4" style="color:#1b5e20;opacity:0.5;">Leichtbier · 100% Bio</span>
+            <div class="font-headline font-bold leading-none" style="color:#1b5e20;">
+                <div class="text-2xl tracking-[0.3em] uppercase mb-1">SHOLTO</div>
+                <div style="font-size:clamp(4rem,12vw,10rem);line-height:0.85;letter-spacing:-0.02em;">tutti</div>
+            </div>
+        </div>
+        <p class="font-body text-xl leading-relaxed" style="color:rgba(27,94,32,0.65);">
+            Drei grafische Welten, eine Identität. Geometrische Energie, Kontrast und der runde Körper des Bieres — auf 33 cl. Kein Alkohol, aber voller Charakter.
+        </p>
+    </div>
+</section>
+
 <!-- Product Family: TUTTI COMPLETTI -->
 <section class="px-10 py-32 bg-surface-container">
     <div class="flex justify-between items-end mb-20">
@@ -218,7 +262,7 @@
         <!-- Product Card 1: TUTTI -->
         <div class="bg-surface p-8 group cursor-pointer border border-transparent hover:border-primary/10 transition-all">
             <div class="aspect-[3/4] bg-surface-container-low mb-8 flex items-center justify-center">
-                <img alt="Tutti Can" class="w-4/5 h-4/5 object-contain group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmbZuXpXg8ZqlttUgkXbVIWH30GZX_yp7d2rhMqbH3hUwExOqxmwWxdBVc5KkARlBPs28OT_Hb-jqZ_pyOaFNfOFWYgWYZGOYwgVWw4jyUp3vkc7_5xtLN1JACabO4oCegFoFYFj99l1EqWOyNg1SPeRdYQIZdMj4xb3rbVUZHnMfr6N2oXSfT3eAyI2X3AZPODX4rkNgcoNz9j57jC-sj9AfSrFA-6gtAkjm83vg9tA6W2HfjmPc7xAFCVF3P1a4C1f8AqQdqcGQb"/>
+                <img alt="Sholto Tutti Dose" class="w-4/5 h-4/5 object-contain group-hover:scale-110 transition-transform duration-500" src="../assets/images/produkt-sholto-tutti/produkt-haupt.png"/>
             </div>
             <div class="flex justify-between items-center">
                 <div>
@@ -228,15 +272,15 @@
                 <span class="font-headline text-xl font-medium">3,90 €</span>
             </div>
         </div>
-        <!-- Product Card 2: TILDA -->
+        <!-- Product Card 2: CALA -->
         <div class="bg-surface p-8 group cursor-pointer border border-transparent hover:border-primary/10 transition-all">
             <div class="aspect-[3/4] bg-surface-container-low mb-8 flex items-center justify-center">
-                <img alt="Tilda Can" class="w-4/5 h-4/5 object-contain group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-f1W1KiB0YGP_P4oBUb9ay0DFcDP_QNZMtcXFs9h75WEL9WQnwtbY0eAIY-EqYurGZYitAgvnoLsNxkO48ch4WYoE8yGt4K6wYES7VMWJ-pT7B304HdC329wXty1ieMyD7AugbselEcoN_Wx6ZD5ZptS4tSbHbeRLv6y_IjPQJytfA6PQHLS0BqPeAf9I5916_vrqGB0rbJCg9kwQsixNj_e9JGKkj8nM7Ah4ppITLfss5l0xnfpawK3MSx-yRWWaWfO-Nma5AEgY"/>
+                <img alt="Sholto Cala Dose" class="w-4/5 h-4/5 object-contain group-hover:scale-110 transition-transform duration-500" src="../assets/images/produkt-sholto-cala/produkt-haupt.png"/>
             </div>
             <div class="flex justify-between items-center">
                 <div>
-                    <h4 class="font-headline text-2xl font-bold">SHOLTO TILDA</h4>
-                    <p class="font-label text-sm uppercase text-primary-container">Botanical Lager</p>
+                    <h4 class="font-headline text-2xl font-bold">SHOLTO CALA</h4>
+                    <p class="font-label text-sm uppercase text-primary-container">Urban Classic</p>
                 </div>
                 <span class="font-headline text-xl font-medium">3,90 €</span>
             </div>

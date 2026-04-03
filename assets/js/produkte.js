@@ -15,7 +15,7 @@ const SEGOS_PRODUKTE = [
     ibu:         "22",
     ebc:         "8",
     stammwuerze: "13.5°P",
-    bild:        "../assets/images/segos-sortiment/helles.jpg",
+    bild:        "../assets/images/produkt-segos-helles/produkt-haupt.png",
     link:        "./produkt-segos-helles.html"
   },
 
@@ -26,7 +26,7 @@ const SEGOS_PRODUKTE = [
     ibu:         "23",
     ebc:         "45",
     stammwuerze: "14.5°P",
-    bild:        "../assets/images/segos-sortiment/dunkel.jpg",
+    bild:        "../assets/images/produkt-segos-dunkel/produkt-haupt.png",
     link:        "./produkt-segos-dunkel.html"
   },
 
@@ -37,7 +37,7 @@ const SEGOS_PRODUKTE = [
     ibu:         "40",
     ebc:         "12",
     stammwuerze: "14.5°P",
-    bild:        "../assets/images/segos-sortiment/ipa.jpg",
+    bild:        "../assets/images/produkt-segos-ipa/produkt-haupt.png",
     link:        "./produkt-segos-ipa.html"
   },
 
@@ -48,7 +48,7 @@ const SEGOS_PRODUKTE = [
     ibu:         "2",
     ebc:         "0",
     stammwuerze: "0.0°P",
-    bild:        "../assets/images/segos-sortiment/hopwater.jpg",
+    bild:        "../assets/images/produkt-segos-hopwater/produkt-haupt.png",
     link:        "./produkt-segos-hopwater.html"
   },
 
@@ -77,7 +77,7 @@ const SHOLTO_PRODUKTE = [
     beschreibung: "Die Definition von Klarheit. Ein spritziger Mix aus mediterranen Zitrusnoten und purer urbaner Energie.",
     tags:        ["Mindful", "Citrus", "0.0% ABV"],
     badge:       "",
-    bild:        "../assets/images/sholto-sortiment/tutti.jpg",
+    bild:        "../assets/images/produkt-sholto-tutti/produkt-haupt.png",
     link:        "./produkt-sholto-tutti.html"
   },
 
@@ -86,8 +86,8 @@ const SHOLTO_PRODUKTE = [
     beschreibung: "Ein tiefes, komplexes Geschmacksprofil mit Nuancen von wildem Hopfen und einem sanften Finish.",
     tags:        ["Urban", "Floral", "Hazy"],
     badge:       "Urban Classic",
-    bild:        "../assets/images/sholto-sortiment/haze.jpg",
-    link:        "./produkt-sholto-haze.html"
+    bild:        "../assets/images/produkt-sholto-cala/produkt-haupt.png",
+    link:        "./produkt-sholto-cala.html"
   },
 
   {
@@ -95,8 +95,8 @@ const SHOLTO_PRODUKTE = [
     beschreibung: "Inspiriert von urbanen Dachgärten. Eine Fusion aus Kräutern und Leichtigkeit.",
     tags:        ["Botanical", "Fresh", "Low Cal"],
     badge:       "New Standard",
-    bild:        "../assets/images/sholto-sortiment/garden.jpg",
-    link:        "./produkt-sholto-garden.html"
+    bild:        "../assets/images/produkt-sholto-frio/produkt-haupt.png",
+    link:        "./produkt-sholto-frio.html"
   },
 
   // ── NEUES PRODUKT HINZUFÜGEN: Diese Vorlage kopieren & ausfüllen ──
