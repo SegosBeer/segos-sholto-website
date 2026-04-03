@@ -15,6 +15,8 @@
     <link rel="icon" type="image/png" href="/assets/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Work+Sans:wght@300..600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
         tailwind.config = {
@@ -64,6 +66,7 @@
         .custom-scrollbar::-webkit-scrollbar { width: 4px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: #f2ede2; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #3a412c; }
+        .map-tiles { filter: brightness(2.1) contrast(1.05); }
     </style>
     <title>B2B / Gastronomie | Segos Braumanufaktur</title>
 </head>
@@ -192,7 +195,7 @@
 </div>
 </section>
 <!-- Store Finder -->
-<section class="py-32 bg-surface-container-low">
+<section class="py-32 bg-surface-container-low" id="store-finder">
 <div class="container mx-auto px-8">
 <div class="flex flex-col lg:flex-row gap-16">
 <div class="lg:w-1/3">
@@ -207,28 +210,36 @@
 </div>
 <div class="mt-8 space-y-4 max-h-[400px] overflow-y-auto custom-scrollbar pr-4">
 <div class="p-6 bg-surface border border-outline-variant hover:border-primary transition-colors cursor-pointer">
-<h4 class="font-headline font-bold uppercase">Getränke-Zentrum Süd</h4>
-<p class="text-sm opacity-60 mt-1">Industriestraße 45, 86159 Augsburg</p>
+<h4 class="font-headline font-bold uppercase">Rampenverkauf – Biershop Brauerei Frastanz</h4>
+<p class="text-sm opacity-60 mt-1">Bahnhofstraße 22, 6820 Frastanz</p>
 <p class="text-[10px] font-bold uppercase tracking-widest mt-4 flex items-center gap-2">
 <span class="w-2 h-2 bg-green-600 rounded-full"></span> Auf Lager
 </p>
 </div>
 <div class="p-6 bg-surface border border-outline-variant hover:border-primary transition-colors cursor-pointer">
-<h4 class="font-headline font-bold uppercase">Craft Beer Store Lech</h4>
-<p class="text-sm opacity-60 mt-1">Maximilianstraße 12, 86150 Augsburg</p>
+<h4 class="font-headline font-bold uppercase">hops &amp; malt Biershop</h4>
+<p class="text-sm opacity-60 mt-1">Eisengasse 2, 6850 Dornbirn</p>
+<p class="text-[10px] font-bold uppercase tracking-widest mt-4 flex items-center gap-2">
+<span class="w-2 h-2 bg-green-600 rounded-full"></span> Auf Lager
+</p>
+</div>
+<div class="p-6 bg-surface border border-outline-variant hover:border-primary transition-colors cursor-pointer">
+<h4 class="font-headline font-bold uppercase">hops &amp; malt Biershop</h4>
+<p class="text-sm opacity-60 mt-1">Maurachgasse 16, 6900 Bregenz</p>
+<p class="text-[10px] font-bold uppercase tracking-widest mt-4 flex items-center gap-2">
+<span class="w-2 h-2 bg-green-600 rounded-full"></span> Auf Lager
+</p>
+</div>
+<div class="p-6 bg-surface border border-outline-variant hover:border-primary transition-colors cursor-pointer">
+<h4 class="font-headline font-bold uppercase">Lifestyle Ernst Summer</h4>
+<p class="text-sm opacity-60 mt-1">Doktor-Griß-Straße 6, 6830 Rankweil</p>
 <p class="text-[10px] font-bold uppercase tracking-widest mt-4 flex items-center gap-2 text-primary/40">
 <span class="w-2 h-2 bg-primary/20 rounded-full"></span> Begrenzter Vorrat
 </p>
 </div>
 </div>
 </div>
-<div class="lg:w-2/3 min-h-[500px] bg-surface-variant relative grayscale hover:grayscale-0 transition-all duration-1000 border border-primary/10">
-<div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
-<div class="absolute top-1/4 left-1/3 w-4 h-4 bg-primary rounded-full animate-ping"></div>
-<div class="absolute top-1/4 left-1/3 w-4 h-4 bg-primary rounded-full"></div>
-<div class="absolute top-1/2 left-2/3 w-4 h-4 bg-primary rounded-full"></div>
-<div class="absolute top-3/4 left-1/2 w-4 h-4 bg-primary rounded-full"></div>
-</div>
+<div id="retailer-map" class="lg:w-2/3 border border-primary/10" style="min-height:500px;z-index:0"></div>
 </div>
 </div>
 </section>
@@ -494,6 +505,173 @@ Download <span class="material-symbols-outlined text-sm group-hover:translate-x-
     import { AgeGate } from '/assets/js/utils.js';
     window.AgeGate = AgeGate;
     window.CONFIG = CONFIG;
+</script>
+
+<script>
+(function() {
+  // Store-Daten mit Koordinaten
+  const stores = [
+    {
+      name: "Rampenverkauf – Biershop Brauerei Frastanz",
+      address: "Bahnhofstraße 22, 6820 Frastanz",
+      lat: 47.2180,
+      lng: 9.6347,
+      stock: "full"
+    },
+    {
+      name: "hops & malt Biershop",
+      address: "Eisengasse 2, 6850 Dornbirn",
+      lat: 47.4125,
+      lng: 9.7432,
+      stock: "full"
+    },
+    {
+      name: "hops & malt Biershop",
+      address: "Maurachgasse 16, 6900 Bregenz",
+      lat: 47.5030,
+      lng: 9.7474,
+      stock: "full"
+    },
+    {
+      name: "Lifestyle Ernst Summer",
+      address: "Doktor-Griß-Straße 6, 6830 Rankweil",
+      lat: 47.2736,
+      lng: 9.6517,
+      stock: "limited"
+    }
+  ];
+
+  function initMap() {
+    if (!document.getElementById('retailer-map')) return;
+
+    const map = L.map('retailer-map', { zoomControl: true }).setView([47.3667, 9.7000], 10);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19,
+      className: 'map-tiles'
+    }).addTo(map);
+
+    function greenIcon() {
+      return L.divIcon({
+        className: '',
+        html: '<div style="width:18px;height:18px;background:#16a34a;border-radius:50%;border:3px solid #fff;box-shadow:0 0 10px rgba(22,163,74,0.7)"></div>',
+        iconSize: [18, 18],
+        iconAnchor: [9, 9],
+        popupAnchor: [0, -14]
+      });
+    }
+
+    const markerMap = {};
+
+    stores.forEach(function(s) {
+      const mapsUrl = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(s.address);
+      const popup = '<div style="font-family:\'Work Sans\',sans-serif;min-width:210px;padding:4px">'
+        + '<b style="font-family:\'Space Grotesk\',sans-serif;text-transform:uppercase;font-size:13px;letter-spacing:0.05em">' + s.name + '</b>'
+        + '<p style="font-size:12px;color:#666;margin:6px 0 10px">' + s.address + '</p>'
+        + '<a href="' + mapsUrl + '" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#242b18;color:#fff;padding:9px 14px;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;font-weight:700;text-decoration:none">'
+        + 'Route in Google Maps &rarr;</a></div>';
+      const marker = L.marker([s.lat, s.lng], { icon: greenIcon() }).bindPopup(popup).addTo(map);
+      markerMap[s.name] = marker;
+    });
+
+    // Haversine-Distanz in km
+    function haversine(lat1, lon1, lat2, lon2) {
+      var R = 6371;
+      var dLat = (lat2 - lat1) * Math.PI / 180;
+      var dLon = (lon2 - lon1) * Math.PI / 180;
+      var a = Math.sin(dLat/2)*Math.sin(dLat/2)
+            + Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)
+            * Math.sin(dLon/2)*Math.sin(dLon/2);
+      return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    }
+
+    function renderSidebar(userLat, userLng) {
+      var sidebar = document.querySelector('.mt-8.space-y-4');
+      if (!sidebar) return;
+      sidebar.innerHTML = '';
+
+      var withDist = stores.map(function(s) {
+        return Object.assign({}, s, { dist: haversine(userLat, userLng, s.lat, s.lng) });
+      }).sort(function(a, b) { return a.dist - b.dist; });
+
+      withDist.forEach(function(s) {
+        var mapsUrl = 'https://www.google.com/maps/dir/?api=1&origin=' + userLat + ',' + userLng
+          + '&destination=' + encodeURIComponent(s.address);
+        var stockHtml = s.stock === 'full'
+          ? '<span style="display:inline-block;width:8px;height:8px;background:#16a34a;border-radius:50%;margin-right:6px"></span>Auf Lager'
+          : '<span style="display:inline-block;width:8px;height:8px;background:#c5c0b0;border-radius:50%;margin-right:6px"></span>Begrenzter Vorrat';
+
+        var div = document.createElement('div');
+        div.className = 'p-6 bg-surface border border-outline-variant hover:border-primary transition-colors cursor-pointer';
+        div.innerHTML = '<h4 class="font-headline font-bold uppercase">' + s.name + '</h4>'
+          + '<p class="text-sm opacity-60 mt-1">' + s.address + '</p>'
+          + '<p class="text-xs font-bold opacity-70 mt-2">' + s.dist.toFixed(1) + ' km entfernt</p>'
+          + '<p class="text-[10px] font-bold uppercase tracking-widest mt-3 flex items-center">' + stockHtml + '</p>'
+          + '<a href="' + mapsUrl + '" target="_blank" rel="noopener" class="inline-block mt-4 text-[10px] font-bold uppercase tracking-widest underline underline-offset-2 hover:opacity-70">Route in Google Maps &rarr;</a>';
+
+        div.addEventListener('click', function(e) {
+          if (e.target.tagName === 'A') return;
+          map.setView([s.lat, s.lng], 15);
+          if (markerMap[s.name]) markerMap[s.name].openPopup();
+        });
+        sidebar.appendChild(div);
+      });
+    }
+
+    async function doSearch() {
+      var input = document.querySelector('input[placeholder="PLZ oder Stadt eingeben"]');
+      if (!input) return;
+      var query = input.value.trim();
+      if (!query) return;
+
+      try {
+        var res = await fetch('https://nominatim.openstreetmap.org/search?q=' + encodeURIComponent(query) + '&format=json&limit=1&accept-language=de&countrycodes=at');
+        var data = await res.json();
+        if (!data.length) {
+          alert('Ort nicht gefunden. Bitte PLZ oder Stadt prüfen.');
+          return;
+        }
+        var userLat = parseFloat(data[0].lat);
+        var userLng = parseFloat(data[0].lon);
+
+        // Benutzerpunkt auf Karte zeigen
+        var userIcon = L.divIcon({
+          className: '',
+          html: '<div style="width:14px;height:14px;background:#3b82f6;border-radius:50%;border:3px solid #fff;box-shadow:0 0 8px rgba(59,130,246,0.8)"></div>',
+          iconSize: [14, 14],
+          iconAnchor: [7, 7]
+        });
+        L.marker([userLat, userLng], { icon: userIcon }).addTo(map)
+          .bindPopup('<b style="font-size:12px">Ihr Standort</b>').openPopup();
+
+        // Karte auf Benutzer zentrieren, alle Punkte sichtbar
+        var bounds = L.latLngBounds([[userLat, userLng]].concat(stores.map(function(s) { return [s.lat, s.lng]; })));
+        map.fitBounds(bounds, { padding: [40, 40] });
+
+        renderSidebar(userLat, userLng);
+      } catch (err) {
+        alert('Suche fehlgeschlagen. Bitte Internetverbindung prüfen.');
+      }
+    }
+
+    // Event Listeners
+    var searchBtn = document.querySelector('.relative.group button');
+    var searchInput = document.querySelector('input[placeholder="PLZ oder Stadt eingeben"]');
+    if (searchBtn) searchBtn.addEventListener('click', doSearch);
+    if (searchInput) searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') doSearch();
+    });
+  }
+
+  // Warten bis DOM geladen
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMap);
+  } else {
+    initMap();
+  }
+})();
 </script>
 </body>
 </html>
